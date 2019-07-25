@@ -10,7 +10,7 @@ WeDataSphere是一套金融级、一站式、开源开放的大数据平台套�
 [Linkis](https://github.com/WeBankFinTech/Linkis)是一个打通了多个计算存储引擎如：Spark、Flink、Hive、Python和HBase等，对外提供统一REST/WS/JDBC接口，提交执行SQL、Pyspark、HiveQL、Scala等脚本的数据中间件。
 
 ### Scriptis
-[Scriptis](https://github.com/WeBankFinTech/Scriptis)Scriptis是一款支持写SQL、Pyspark、HiveQL等脚本，提交给Spark、Hive和Python等计算引擎执行的交互式数据分析Web工具，且支持UDF、函数、资源管控和智能诊断等企业级特性。
+[Scriptis](https://github.com/WeBankFinTech/Scriptis)是一款支持写SQL、Pyspark、HiveQL等脚本，提交给Spark、Hive和Python等计算引擎执行的交互式数据分析Web工具，且支持UDF、函数、资源管控和智能诊断等企业级特性。
 
 <br>
 更多开源组件，敬请期待...
