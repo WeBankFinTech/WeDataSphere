@@ -44,3 +44,7 @@ Consists of the development&exploration tool(Scriptis), a graphical workflow sch
   The unique data middleware(Linkis) links up systems in different layers, bringing data consanguinity, code reusability and user resources altogether.
 
 ## Community
+
+If you desire immediate response, please kindly raise issues to us or scan the below QR code by WeChat and QQ to join our group:
+<br>
+![introduction05](images/introduction/introduction05.jpg)
