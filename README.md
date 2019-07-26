@@ -13,7 +13,7 @@ WeDataSphere is a financial level one-stop open-source suitcase for big data pla
 [Scriptis](https://github.com/WeBankFinTech/Scriptis) is for interactive data analysis with script development(SQL, Pyspark, HiveQL), task submission(Spark, Hive), UDF, function, resource management and intelligent diagnosis.
 
 <br>
-More open source components, stay tuned...
+More open-source components? Coming soon...
 
 ## Core Features
 
