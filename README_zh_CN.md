@@ -1,4 +1,4 @@
-[English](READMe.md) | [中文](READMe_zh_CN.md)
+[English](README.md) | [中文](README_zh_CN.md)
 
 ## 引言
 
@@ -39,4 +39,8 @@ WeDataSphere是一套金融级、一站式、开源开放的大数据平台套�
 
 - 经纬方向打通孤岛<br>
   独有的数据中间件Linkis，打通上下层各系统，使数据血缘、代码通用性、用户资源全部融会贯通。
+
 ## Community
+
+如果您想得到最快的响应，请给我们提issue，或者您也可以扫码进群：
+![introduction05](images/introduction/introduction05.jpg)
