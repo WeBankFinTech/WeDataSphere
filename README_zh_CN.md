@@ -1,19 +1,25 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
-## 引言
+## 已开源组件
 
-WeDataSphere是一套金融级、一站式、开源开放的大数据平台套件。基础平台由数据交换、数据分发、计算、存储四大层次组成，关注底层数据传输计算存储能力；功能平台由平台工具、数据工具、应用工具三大层次组成，关注用户各类功能工具需求实现。形成了完整的大数据平台技术体系，提供一站式的丰富数据平台组件及功能支撑。
+### Linkis
 
-## 开源组件
+**[点我](https://github.com/WeBankFinTech/Linkis)进入Github repo**
 
-### [Linkis](https://github.com/WeBankFinTech/Linkis)
 [Linkis](https://github.com/WeBankFinTech/Linkis)是一个打通了多个计算存储引擎如：Spark、Flink、Hive、Python和HBase等，对外提供统一REST/WS/JDBC接口，提交执行SQL、Pyspark、HiveQL、Scala等脚本的数据中间件。
 
-### [Scriptis](https://github.com/WeBankFinTech/Scriptis)
+### Scriptis
+
+**[点我](https://github.com/WeBankFinTech/Scriptis)进入GitHub repo**
+
 [Scriptis](https://github.com/WeBankFinTech/Scriptis)是一款支持写SQL、Pyspark、HiveQL等脚本，提交给Spark、Hive和Python等计算引擎执行的交互式数据分析Web工具，且支持UDF、函数、资源管控和智能诊断等企业级特性。
 
 <br>
 更多开源组件，敬请期待...
+
+## 引言
+
+WeDataSphere是一套金融级、一站式、开源开放的大数据平台套件。基础平台由数据交换、数据分发、计算、存储四大层次组成，关注底层数据传输计算存储能力；功能平台由平台工具、数据工具、应用工具三大层次组成，关注用户各类功能工具需求实现。形成了完整的大数据平台技术体系，提供一站式的丰富数据平台组件及功能支撑。
 
 ## 核心特点
 - 基础能力<br>
