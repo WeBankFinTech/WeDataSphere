@@ -12,7 +12,7 @@
 
 **[点我](https://github.com/WeBankFinTech/Scriptis)进入GitHub repo**
 
-[Scriptis](https://github.com/WeBankFinTech/Scriptis)是一款支持写SQL、Pyspark、HiveQL等脚本，提交给Spark、Hive和Python等计算引擎执行的交互式数据分析Web工具，且支持UDF、函数、资源管控和智能诊断等企业级特性。
+[Scriptis](https://github.com/WeBankFinTech/Scriptis)是一款支持在线写SQL、Pyspark、HiveQL等脚本，提交给Linkis执行的交互式数据分析Web工具，且支持UDF、函数、资源管控和智能诊断等企业级特性。
 
 <br>
 更多开源组件，敬请期待...
