@@ -1,9 +1,5 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
-## Introduction
-
-WeDataSphere is a financial level one-stop open-source suitcase for big data platforms. The fundamental platform consists of 4 layers for data exchange, data distribution, computation and storage; The functional platform consists of 3 layers for platform tools, data tools and application tools, focusing on the implementations of various user requirements about functional tools. These construct as a complete technical ecosystem of big data platform and provides one-stop sufficient components and functionalities support. 
-
 ## Open Source Component
 
 ### Linkis 
@@ -20,6 +16,11 @@ WeDataSphere is a financial level one-stop open-source suitcase for big data pla
 
 <br>
 More open-source components? Coming soon...
+
+
+## Introduction
+
+WeDataSphere is a financial level one-stop open-source suitcase for big data platforms. The fundamental platform consists of 4 layers for data exchange, data distribution, computation and storage; The functional platform consists of 3 layers for platform tools, data tools and application tools, focusing on the implementations of various user requirements about functional tools. These construct as a complete technical ecosystem of big data platform and provides one-stop sufficient components and functionalities support. 
 
 ## Core Features
 
