@@ -6,10 +6,10 @@ WeDataSphere is a financial level one-stop open-source suitcase for big data pla
 
 ## Open Source Component
 
-### [Linkis](https://github.com/WeBankFinTech/Linkis)
+### Linkis [Click me](https://github.com/WeBankFinTech/Linkis) to Github repo 
 [Linkis](https://github.com/WeBankFinTech/Linkis) connects with compuation/storage engines(Spark, Flink, Hive, Python and HBase), exposes REST/WS interface, and executes multi-language jobs(SQL, Pyspark, HiveQL and Scala), as a data middleware.
 
-### [Scriptis](https://github.com/WeBankFinTech/Scriptis)
+### Scriptis [Click me](https://github.com/WeBankFinTech/Scriptis) to Github repo
 [Scriptis](https://github.com/WeBankFinTech/Scriptis) is for interactive data analysis with script development(SQL, Pyspark, HiveQL), task submission(Spark, Hive), UDF, function, resource management and intelligent diagnosis.
 
 <br>
