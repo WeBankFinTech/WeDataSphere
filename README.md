@@ -12,7 +12,7 @@
 
 **[Click me](https://github.com/WeBankFinTech/Scriptis) to Github repo**
 
-[Scriptis](https://github.com/WeBankFinTech/Scriptis) is for interactive data analysis with script development(SQL, Pyspark, HiveQL), task submission(Spark, Hive), UDF, function, resource management and intelligent diagnosis.
+[Script](https://github.com/WeBankFinTech/Scriptis) is for interactive data analysis with script development(SQL, Pyspark, HiveQL), task submission(Spark, Hive), UDF, function, resource management and intelligent diagnosis.
 
 <br>
 More open-source components? Coming soon...
