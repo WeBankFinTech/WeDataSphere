@@ -49,4 +49,4 @@ WeDataSphere是一套金融级、一站式、开源开放的大数据平台套�
 ## Community
 
 如果您想得到最快的响应，请给我们提issue，或者您也可以扫码进群：
-![introduction05](images/introduction/introduction05.jpg)
+![weChatAndQQ](images/introduction/weChatQQ.png)

@@ -62,4 +62,4 @@ Consists of the development&exploration tool(Scriptis), a graphical workflow sch
 
 If you desire immediate response, please kindly raise issues to us or scan the below QR code by WeChat and QQ to join our group:
 <br>
-![introduction05](images/introduction/introduction05.jpg)
+![weChatAndQQ](images/introduction/weChatQQ.png)
