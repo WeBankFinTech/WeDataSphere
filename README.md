@@ -8,7 +8,7 @@
 
 [Linkis](https://github.com/WeBankFinTech/Linkis) connects with compuation/storage engines(Spark, Flink, Hive, Python and HBase), exposes REST/WS interface, and executes multi-language jobs(SQL, Pyspark, HiveQL and Scala), as a data middleware.
 
-# *Scriptis*
+# *[Scriptis](https://github.com/WeBankFinTech/Scriptis)*
 
 **[Click me](https://github.com/WeBankFinTech/Scriptis) to Github repo**
 
