@@ -2,7 +2,7 @@
 
 ## Open Source Component
 
-# *Linkis* 
+# *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
 **[Click me](https://github.com/WeBankFinTech/Linkis) to Github repo**
 
