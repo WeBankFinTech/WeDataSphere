@@ -1,6 +1,6 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
-## Open Source Component
+## WeDataSphere Open Source Component
 
 # *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
@@ -18,11 +18,11 @@
 More open-source components? Coming soon...
 
 
-## Introduction
+## WeDataSphere Introduction
 
 WeDataSphere is a financial level one-stop open-source suitcase for big data platforms. The fundamental platform consists of 4 layers for data exchange, data distribution, computation and storage; The functional platform consists of 3 layers for platform tools, data tools and application tools, focusing on the implementations of various user requirements about functional tools. These construct as a complete technical ecosystem of big data platform and provides one-stop sufficient components and functionalities support. 
 
-## Core Features
+## WeDataSphere Core Features
 
 - Fundamental capabilities
 
@@ -40,7 +40,7 @@ Consists of data map, data desensitization, data quality and data exchange tools
 
 Consists of the development&exploration tool(Scriptis), a graphical workflow scheduling system, a data visualization BI tool and a machine learning support system. Scriptis connects with various computation/storage engines with graphical interface and multi development languages support. The graphical workflow scheduling system provides a graphical interface for workflow definition, job execution, dependency reveal, status display, historical statistics and monitoring configuration. The data visualization BI tool generates various charts by drag&drop operations and simple scripting, with scheduled email available. The machine learning support system supports multiple model training mode, including both self-developed ML algorithms and open-source ML frameworks, with multi-tenant management alility for high-performance clusters.
 
-## Core Advantages 
+## WeDataSphere Core Advantages 
 
 - Sufficient application tools
 
@@ -58,7 +58,7 @@ Consists of the development&exploration tool(Scriptis), a graphical workflow sch
   
   The unique data middleware(Linkis) links up systems in different layers, bringing data consanguinity, code reusability and user resources altogether.
 
-## Community
+## WeDataSphere Community
 
 If you desire immediate response, please kindly raise issues to us or scan the below QR code by WeChat and QQ to join our group:
 <br>
