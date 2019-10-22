@@ -1,6 +1,6 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
-## 已开源组件
+## WeDataSphere 已开源组件
 
 # *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
@@ -16,7 +16,7 @@
 
 ----
 
-## 即将开源组件
+## WeDataSphere 即将开源组件
 
 # *DataWorkis*
 
@@ -31,13 +31,13 @@ DataWorkis是一个集IDE研发+可视化BI+图形化工作流为一体，对接
 
 ----
 
-## 引言
+## WeDataSphere 介绍
 
 WeDataSphere是一套金融级、一站式、开源开放的大数据平台套件。基础平台由数据交换、数据分发、计算、存储四大层次组成，关注底层数据传输计算存储能力；功能平台由平台工具、数据工具、应用工具三大层次组成，关注用户各类功能工具需求实现。形成了完整的大数据平台技术体系，提供一站式的丰富数据平台组件及功能支撑。
 
 ----
 
-## 核心特点
+## WeDataSphere 核心特点
 - 基础能力<br>
 基于开源社区的各种开源组件，如：Hadoop、Spark、Hbase、KubeFlow和FFDL等，构建金融级可靠基础计算存储数据交换能力，及强大的机器学习能力。并在开源版本基础上做加法，解决实际应用场景中遇到的安全、性能、高可用、可管理性等问题及各种bug修复。
 
@@ -52,7 +52,7 @@ WeDataSphere是一套金融级、一站式、开源开放的大数据平台套�
 
 ----
 
-## 核心优势 
+## WeDataSphere 核心优势 
 - 丰富的功能工具<br>
  平台工具、数据工具和应用工具的三层工具体系与强大的机器学习能力，构建完整的企业级大数据解决方案
 
@@ -67,7 +67,7 @@ WeDataSphere是一套金融级、一站式、开源开放的大数据平台套�
 
 ----
 
-## Community
+## WeDataSphere Community
 
 如果您想得到最快的响应，请给我们提issue，或者您也可以扫码进群：
 ![weChatAndQQ](images/introduction/weChatQQ.png)
