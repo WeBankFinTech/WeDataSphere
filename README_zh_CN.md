@@ -6,7 +6,7 @@
 
 **[点我](https://github.com/WeBankFinTech/Linkis)进入Github repo**
 
-[Linkis](https://github.com/WeBankFinTech/Linkis)是一个打通了多个计算存储引擎如：Spark、Flink、Hive、Python和HBase等，对外提供统一REST/WS/JDBC接口，提交执行SQL、Pyspark、HiveQL、Scala等脚本的数据中间件。
+[Linkis](https://github.com/WeBankFinTech/Linkis)是一个打通了多个计算存储引擎如：Spark、Flink、Hive、Python和HBase等，对外提供统一REST/WS/JDBC接口，提交执行SQL、Pyspark、HiveQL、Scala等脚本的计算中间件。
 
 # *[Scriptis](https://github.com/WeBankFinTech/Scriptis)*
 
@@ -20,7 +20,7 @@
 
 # *DataWorkis*
 
-DataWorkis是一个集IDE研发+可视化BI+图形化工作流为一体，对接了数据中间件Linkis的一站式数据研发、展现和调度的数据应用开发门户。
+DataWorkis是一个集IDE研发+可视化BI+图形化工作流为一体，对接了计算中间件Linkis的一站式数据研发、展现和调度的数据应用开发门户。
 
 **前端方面**：Scriptis、可视化BI工具和工作流调度系统的前端合为一体，用户可以在一个工作流的定义中，数据导入、数据分析、可视化展示和工作流提交调度。
 
