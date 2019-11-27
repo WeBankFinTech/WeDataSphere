@@ -2,6 +2,18 @@
 
 ## WeDataSphere 已开源组件
 
+# *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
+
+**[点我](https://github.com/WeBankFinTech/DataSphereStudio)进入Github repo**
+
+[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)定位为数据应用开发门户，闭环涵盖数据应用开发全流程。在统一的UI下，以工作流式的图形化拖拽开发体验，满足从数据导入、脱敏清洗、分析挖掘、质量检测、可视化展现、定时调度到数据输出应用等，数据应用开发全流程场景需求。
+
+# *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
+
+**[点我](https://github.com/WeBankFinTech/Qualitis)进入Github repo**
+
+[Qualitis](https://github.com/WeBankFinTech/Qualitis)是一个支持多种异构数据源的质量校验、通知、管理服务的一站式数据质量管理平台，用于解决业务系统运行、数据中心建设及数据治理过程中的各种数据质量问题。
+
 # *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
 **[点我](https://github.com/WeBankFinTech/Linkis)进入Github repo**
@@ -14,30 +26,6 @@
 
 [Scriptis](https://github.com/WeBankFinTech/Scriptis)是一款支持在线写SQL、Pyspark、HiveQL等脚本，提交给Linkis执行的交互式数据分析Web工具，且支持UDF、函数、资源管控和智能诊断等企业级特性。
 
-----
-
-## WeDataSphere 即将开源组件
-
-# *DataSphere Studio*
-
-对接了数据中间件Linkis的DataSphere Studio(简称DSS)，在统一的UI下，作为一站式数据应用开发管理门户，定位为闭环涵盖数据应用的全流程，满足从数据导入、脱敏清洗、数据加工、质量校验、可视化展现、定时调度到数据输出的数据应用开发全流程场景需求。
-
-**前端方面**：Scriptis、Qualitis、可视化BI工具和工作流调度系统的前端合为一体，用户可以在一个工作流的定义中，做数据分析、质量校验、可视化展示、邮件发送、和工作流提交调度。
-
-**后台方面**：支持简单快速集成新的外部数据应用系统，让数据研发IDE工具的一段代码，快速且顺畅地实现可视化展示，发布到工作流调度工具进行定时调度，无须顾及代码兼容性、UDF、自定义变量和各种Jar的跨系统使用问题。
-
-DataSphere Studio预计将在11月下旬开源，敬请期待！
-
-# *Qualitis*
-
-Qualitis——数据质量管理服务，是微众银行自主研发的，对接了Linkis的数据质量检测系统，包括数据质量模型定义，数据质量结果可视化、可监控。
-
-数据质量管理服务提供一整套统一的流程来定义和检测数据集的质量并及时报告问题。
-
-Qualitis提供了DataSphere Studio插件，支持插拔式集成到DataSphere Studio之中，作为数据应用开发的工作流节点。
-
-Qualitis将在11月下旬开源，敬请期待！
-
 <br>
 更多开源组件，敬请期待...
 
@@ -45,11 +33,12 @@ Qualitis将在11月下旬开源，敬请期待！
 
 ## WeDataSphere 介绍
 
-WeDataSphere是一套金融级、一站式、开源开放的大数据平台套件。基础平台由数据交换、数据分发、计算、存储四大层次组成，关注底层数据传输计算存储能力；功能平台由平台工具、数据工具、应用工具三大层次组成，关注用户各类功能工具需求实现。形成了完整的大数据平台技术体系，提供一站式的丰富数据平台组件及功能支撑。
+WeDataSphere是一套一站式、金融级、全连通、开源开放的大数据平台套件。基础平台由数据交换、数据分发、计算、存储四大层次组成，关注底层数据传输计算存储能力；功能平台由平台工具、数据工具、应用工具三大层次组成，关注用户各类功能工具需求实现。形成了完整的大数据平台技术体系，提供一站式的丰富数据平台组件及功能支撑。
 
 ----
 
 ## WeDataSphere 核心特点
+
 - 基础能力<br>
 基于开源社区的各种开源组件，如：Hadoop、Spark、Hbase、KubeFlow和FFDL等，构建金融级可靠基础计算存储数据交换能力，及强大的机器学习能力。并在开源版本基础上做加法，解决实际应用场景中遇到的安全、性能、高可用、可管理性等问题及各种bug修复。
 
@@ -64,18 +53,19 @@ WeDataSphere是一套金融级、一站式、开源开放的大数据平台套�
 
 ----
 
-## WeDataSphere 核心优势 
-- 丰富的功能工具<br>
- 平台工具、数据工具和应用工具的三层工具体系与强大的机器学习能力，构建完整的企业级大数据解决方案
+## WeDataSphere 核心优势
 
-- 两地三中心，跨集群同步<br>
-  大数据集群数据跨集群、跨IDC之间高效可靠传输，提供完善的数据备份和容灾解决方案
+- 一站式<br>
+ 提供从数据应用开发到数据可视化、从批量作业到实时流式计算能力等的丰富功能组件，满足不同场景的数据应用开发运行和数据管理需求。
 
-- 安全可靠<br>
-  统一安全管控，全容器化和微服务化、各层级多租户隔离
+- 金融级<br>
+  在高可用、数据治理、数据安全等方面做多种增强，打造金融级高可靠大数据平台，支撑核心关键业务应用。
 
-- 经纬方向打通孤岛<br>
-  独有的数据中间件Linkis，打通上下层各系统，使数据血缘、代码通用性、用户资源全部融会贯通。
+- 全连通<br>
+  独有数据应用开发管理门户DataSphere Studio 和计算中间件Linkis ，两层连通和集成的架构设计，使平台内各组件间南北东西向真正打通，提供更无缝的用户体验，更简化的平台架构，更强大的管控功能。
+
+- 开源开放<br>
+  WeDataSphere 基于开源，回到开源，自研的各种组件会逐步开源；整体设计上开放灵活，对扩展友好且组件可插拔；同时以开源开放的形式，吸引更多个人、组织，参与到WDS的开发建设和推广应用中来。
 
 ----
 
