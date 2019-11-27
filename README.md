@@ -2,6 +2,18 @@
 
 ## WeDataSphere Open Source Component
 
+# *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
+
+**[Click me](https://github.com/WeBankFinTech/DataSphereStudio) to Github repo**
+
+[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)is positioned as a data application development portal, and the closed loop covers the entire process of data application development. With a unified UI, the workflow-like graphical drag-and-drop development experience meets the entire lifecycle of data application development from data import, desensitization cleaning, data analysis, data mining, quality inspection, visualization, scheduling to data output applications, etc.
+
+# *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
+
+**[Click me](https://github.com/WeBankFinTech/Qualitis) to Github repo**
+
+[Qualitis](https://github.com/WeBankFinTech/Qualitis) is a one-stop data quality management platform that supports quality verification, notification, and management for various datasource. It is used to solve various data quality problems caused by data processing.
+
 # *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
 **[Click me](https://github.com/WeBankFinTech/Linkis) to Github repo**
