@@ -2,9 +2,9 @@
 
 see his own CI in each project
 
-[Scriptis](https://github.com/tristan-tsl/Scriptis)
+[Scriptis](https://github.com/WeBankFinTech/Scriptis)
 
-[Linkis](https://github.com/tristan-tsl/Linkis)
+[Linkis](https://github.com/WeBankFinTech/Linkis)
 
 
 
