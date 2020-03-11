@@ -1,26 +1,26 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
-## WeDataSphere Open Source Component
+# WeDataSphere Open Source Component
 
-# *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
+## *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
 **[Click me](https://github.com/WeBankFinTech/DataSphereStudio) to Github repo**
 
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio) is positioned as a data application development portal, and the closed loop covers the entire process of data application development. With a unified UI, the workflow-like graphical drag-and-drop development experience meets the entire lifecycle of data application development from data import, desensitization cleaning, data analysis, data mining, quality inspection, visualization, scheduling to data output applications, etc.
 
-# *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
+## *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
 
 **[Click me](https://github.com/WeBankFinTech/Qualitis) to Github repo**
 
 [Qualitis](https://github.com/WeBankFinTech/Qualitis) is a one-stop data quality management platform that supports quality verification, notification, and management for various datasource. It is used to solve various data quality problems caused by data processing.
 
-# *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
+## *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
 **[Click me](https://github.com/WeBankFinTech/Linkis) to Github repo**
 
 [Linkis](https://github.com/WeBankFinTech/Linkis) connects with compuation/storage engines(Spark, Flink, Hive, Python and HBase), exposes REST/WS interface, and executes multi-language jobs(SQL, Pyspark, HiveQL and Scala), as a data middleware.
 
-# *[Scriptis](https://github.com/WeBankFinTech/Scriptis)*
+## *[Scriptis](https://github.com/WeBankFinTech/Scriptis)*
 
 **[Click me](https://github.com/WeBankFinTech/Scriptis) to Github repo**
 
@@ -30,11 +30,11 @@
 More open-source components? Coming soon...
 
 
-## WeDataSphere Introduction
+# WeDataSphere Introduction
 
 WeDataSphere is a financial level one-stop open-source suitcase for big data platforms. The fundamental platform consists of 4 layers for data exchange, data distribution, computation and storage; The functional platform consists of 3 layers for platform tools, data tools and application tools, focusing on the implementations of various user requirements about functional tools. These construct as a complete technical ecosystem of big data platform and provides one-stop sufficient components and functionalities support. 
 
-## WeDataSphere Core Features
+# WeDataSphere Core Features
 
 - Fundamental capabilities
 
@@ -52,7 +52,7 @@ Consists of data map, data desensitization, data quality and data exchange tools
 
 Consists of the development&exploration tool(Scriptis), a graphical workflow scheduling system, a data visualization BI tool and a machine learning support system. Scriptis connects with various computation/storage engines with graphical interface and multi development languages support. The graphical workflow scheduling system provides a graphical interface for workflow definition, job execution, dependency reveal, status display, historical statistics and monitoring configuration. The data visualization BI tool generates various charts by drag&drop operations and simple scripting, with scheduled email available. The machine learning support system supports multiple model training mode, including both self-developed ML algorithms and open-source ML frameworks, with multi-tenant management alility for high-performance clusters.
 
-## WeDataSphere Core Advantages 
+# WeDataSphere Core Advantages 
 
 - Sufficient application tools
 
@@ -70,7 +70,19 @@ Consists of the development&exploration tool(Scriptis), a graphical workflow sch
   
   The unique data middleware(Linkis) links up systems in different layers, bringing data consanguinity, code reusability and user resources altogether.
 
-## WeDataSphere Community
+# WeDataShpere continue integration
+
+individual version manage for each project, automated CI, use version comparison file to implement version constraint declaration management between subprojects
+
+supported platform: ansible, docker-compose, kubernetes
+
+[click me for detailed reference](CD/README.md)
+
+stay tuned...
+
+---
+
+# WeDataSphere Community
 
 If you desire immediate response, please kindly raise issues to us or scan the below QR code by WeChat and QQ to join our group:
 <br>

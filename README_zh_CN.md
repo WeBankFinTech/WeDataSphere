@@ -1,26 +1,26 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
-## WeDataSphere 已开源组件
+# WeDataSphere 已开源组件
 
-# *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
+## *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
 **[点我](https://github.com/WeBankFinTech/DataSphereStudio)进入Github repo**
 
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)定位为数据应用开发门户，闭环涵盖数据应用开发全流程。在统一的UI下，以工作流式的图形化拖拽开发体验，满足从数据导入、脱敏清洗、分析挖掘、质量检测、可视化展现、定时调度到数据输出应用等，数据应用开发全流程场景需求。
 
-# *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
+## *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
 
 **[点我](https://github.com/WeBankFinTech/Qualitis)进入Github repo**
 
 [Qualitis](https://github.com/WeBankFinTech/Qualitis)是一个支持多种异构数据源的质量校验、通知、管理服务的一站式数据质量管理平台，用于解决业务系统运行、数据中心建设及数据治理过程中的各种数据质量问题。
 
-# *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
+## *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
 **[点我](https://github.com/WeBankFinTech/Linkis)进入Github repo**
 
 [Linkis](https://github.com/WeBankFinTech/Linkis)是一个打通了多个计算存储引擎如：Spark、Flink、Hive、Python和HBase等，对外提供统一REST/WS/JDBC接口，提交执行SQL、Pyspark、HiveQL、Scala等脚本的计算中间件。
 
-# *[Scriptis](https://github.com/WeBankFinTech/Scriptis)*
+## *[Scriptis](https://github.com/WeBankFinTech/Scriptis)*
 
 **[点我](https://github.com/WeBankFinTech/Scriptis)进入GitHub repo**
 
@@ -31,13 +31,13 @@
 
 ----
 
-## WeDataSphere 介绍
+# WeDataSphere 介绍
 
 WeDataSphere是一套一站式、金融级、全连通、开源开放的大数据平台套件。基础平台由数据交换、数据分发、计算、存储四大层次组成，关注底层数据传输计算存储能力；功能平台由平台工具、数据工具、应用工具三大层次组成，关注用户各类功能工具需求实现。形成了完整的大数据平台技术体系，提供一站式的丰富数据平台组件及功能支撑。
 
 ----
 
-## WeDataSphere 核心特点
+# WeDataSphere 核心特点
 
 - 基础能力<br>
 基于开源社区的各种开源组件，如：Hadoop、Spark、Hbase、KubeFlow和FFDL等，构建金融级可靠基础计算存储数据交换能力，及强大的机器学习能力。并在开源版本基础上做加法，解决实际应用场景中遇到的安全、性能、高可用、可管理性等问题及各种bug修复。
@@ -53,7 +53,7 @@ WeDataSphere是一套一站式、金融级、全连通、开源开放的大数�
 
 ----
 
-## WeDataSphere 核心优势
+# WeDataSphere 核心优势
 
 - 一站式<br>
  提供从数据应用开发到数据可视化、从批量作业到实时流式计算能力等的丰富功能组件，满足不同场景的数据应用开发运行和数据管理需求。
@@ -69,7 +69,19 @@ WeDataSphere是一套一站式、金融级、全连通、开源开放的大数�
 
 ----
 
-## WeDataSphere Community
+# WeDataShpere 持续集成
+
+每个项目各自的版本管理, 自动化CI, 使用版本对照文件实现子项目之间的版本约束声明管理
+
+支持平台: ansible, docker-compose, kubernetes
+
+[点我查看详细参考文档](CD/README_zh.md)
+
+敬请期待...
+
+----
+
+# WeDataSphere Community
 
 如果您想得到最快的响应，请给我们提issue，或者您也可以扫码进群：
 ![weChatAndQQ](images/introduction/weChatQQ.png)

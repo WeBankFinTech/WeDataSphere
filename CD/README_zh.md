@@ -1,6 +1,6 @@
-# CI(continue integration)
+# CI(持续集成)
 
-see his own CI in each project
+我们可以在每个项目中看到他自己的CI
 
 [DataSphereStudio](https://github.com/WeBankFinTech/DataSphereStudio)
 
@@ -12,9 +12,9 @@ see his own CI in each project
 
 
 
-see the docker image at https://hub.docker.com/u/wedatashpere
+我们可以在这个仓库中看到docker镜像:  https://hub.docker.com/u/wedatashpere 
 
-for example:
+例如:
 
 https://hub.docker.com/r/wedatashpere/data-shpere-studio
 
@@ -28,13 +28,13 @@ https://hub.docker.com/r/wedatashpere/linkis
 
 
 
-# CD(continue delivery)
+# CD(持续交付)
 
-see the version comparison table in file: version comparison table
+在version comparison table文件中查看版本对照表格
 
 
 
-the following continue integration method are current supported:
+目前支持以下的秩序集成方式:
 
 [ansible](ansible/README.md)
 
