@@ -34,7 +34,7 @@ https://hub.docker.com/r/wedatashpere/linkis
 
 
 
-目前支持以下的秩序集成方式:
+目前支持以下的部署方式:
 
 [ansible](ansible/README.md)
 

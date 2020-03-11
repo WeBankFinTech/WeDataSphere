@@ -34,7 +34,7 @@ see the version comparison table in file: version comparison table
 
 
 
-the following continue integration method are current supported:
+the following continue delivery method are current supported:
 
 [ansible](ansible/README.md)
 
