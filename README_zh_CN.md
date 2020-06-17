@@ -26,6 +26,13 @@
 
 [Scriptis](https://github.com/WeBankFinTech/Scriptis)是一款支持在线写SQL、Pyspark、HiveQL等脚本，提交给Linkis执行的交互式数据分析Web工具，且支持UDF、函数、资源管控和智能诊断等企业级特性。
 
+# *[Schedulis](https://github.com/WeBankFinTech/Schedulis)*
+
+**[点我](https://github.com/WeBankFinTech/Schedulis)进入GitHub repo**
+
+[Schedulis](https://github.com/WeBankFinTech/Schedulis)是一款具备高性能，高可用，多租户资源隔离等金融级特性工作流任务调度系统，支持数据检查和工作流之间的依赖任务；支持完善的告警和工作流执行策略；提供多种类型的参数设置，动态全局变量和简单易用的 UI。
+
+
 <br>
 更多开源组件，敬请期待...
 
