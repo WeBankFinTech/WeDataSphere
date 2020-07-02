@@ -4,8 +4,7 @@
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis).
 <br>
 ![OSProjects](https://github.com/WeBankFinTech/WeDataSphere/blob/master/images/introduction/OSProjects.png)
-
-
+<br>
 # *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
 **[Click me](https://github.com/WeBankFinTech/DataSphereStudio) to Github repo**
@@ -70,7 +69,7 @@ Consists of the development&exploration tool(Scriptis), a graphical workflow sch
 ## WeDataSphere major Advantages 
 <br>
 ![WDSAdvantages](https://github.com/WeBankFinTech/WeDataSphere/blob/master/images/introduction/WDSAdvantages.png)
-
+<br>
 - One stop
 
   The 3 layers of platform tools, data tools and application tools plus the powerful machine learning capability, build up an enterprise big data solution.
