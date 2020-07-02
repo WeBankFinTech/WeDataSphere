@@ -2,6 +2,8 @@
 
 ## WeDataSphere Open Source Components
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis).
+!(images/introduction/os projects.png)
+
 
 # *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
@@ -64,9 +66,11 @@ Consists of data map, data desensitization, data quality and data exchange tools
 
 Consists of the development&exploration tool(Scriptis), a graphical workflow scheduling system, a data visualization BI tool and a machine learning support system. Scriptis connects with various computation/storage engines with graphical interface and multi development languages support. The graphical workflow scheduling system provides a graphical interface for workflow definition, job execution, dependency reveal, status display, historical statistics and monitoring configuration. The data visualization BI tool generates various charts by drag&drop operations and simple scripting, with scheduled email available. The machine learning support system supports multiple model training mode, including both self-developed ML algorithms and open-source ML frameworks, with multi-tenant management alility for high-performance clusters.
 
-## WeDataSphere Core Advantages 
+## WeDataSphere major Advantages 
 
-- Sufficient application tools
+!(images/introduction/WDS advantages.png)
+
+- One stop
 
   The 3 layers of platform tools, data tools and application tools plus the powerful machine learning capability, build up an enterprise big data solution.
 
@@ -74,13 +78,17 @@ Consists of the development&exploration tool(Scriptis), a graphical workflow sch
 
   Effecient&reliable big data transportation across clusters/IDCs, with sophisticated data backup and disaster tolerance solutions.
 
-- Security
+- Financial grade
   
   Unified security control, fully container/microservice adoption and multi-tenant isolation for different layers.
 
-- Links islets from multiple directions
+- Seamless expirence
   
   The unique data middleware(Linkis) links up systems in different layers, bringing data consanguinity, code reusability and user resources altogether.
+  
+- Open source
+  
+  Core components already open source, the rest coming soon. 
 
 ## WeDataSphere Community
 
