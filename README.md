@@ -1,6 +1,7 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
 ## WeDataSphere Open Source Components
+[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis),[Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis).
 
 # *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
@@ -38,8 +39,7 @@
 
 [Exchangis](https://github.com/WeBankFinTech/Exchangis) is a lightweight,highly extensible data exchange platform that supports data transmission between structured and unstructured heterogeneous data sources. On the application layer, it has business features such as data permission management and control, high availability of node services and multi-tenant resource isolation. On the data layer, it also has architectural characteristics such as diversified transmission architecture, module plug-in and low coupling of components.
 
-<br>
-# More open-source components? Coming soon...
+# More open-source WDS components? Coming soon...
 
 
 ## WeDataSphere Introduction
