@@ -4,7 +4,7 @@
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis).
 <br>
 ![OSProjects](https://github.com/WeBankFinTech/WeDataSphere/blob/master/images/introduction/OSProjects.png)
-<br>
+
 # *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
 **[Click me](https://github.com/WeBankFinTech/DataSphereStudio) to Github repo**
@@ -66,10 +66,10 @@ Consists of data map, data desensitization, data quality and data exchange tools
 
 Consists of the development&exploration tool(Scriptis), a graphical workflow scheduling system, a data visualization BI tool and a machine learning support system. Scriptis connects with various computation/storage engines with graphical interface and multi development languages support. The graphical workflow scheduling system provides a graphical interface for workflow definition, job execution, dependency reveal, status display, historical statistics and monitoring configuration. The data visualization BI tool generates various charts by drag&drop operations and simple scripting, with scheduled email available. The machine learning support system supports multiple model training mode, including both self-developed ML algorithms and open-source ML frameworks, with multi-tenant management alility for high-performance clusters.
 
-## WeDataSphere major Advantages 
+## WeDataSphere major Advantages
 <br>
 ![WDSAdvantages](https://github.com/WeBankFinTech/WeDataSphere/blob/master/images/introduction/WDSAdvantages.png)
-<br>
+
 - One stop
 
   The 3 layers of platform tools, data tools and application tools plus the powerful machine learning capability, build up an enterprise big data solution.
