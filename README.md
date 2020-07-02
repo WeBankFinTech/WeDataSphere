@@ -8,12 +8,6 @@
 
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio) is positioned as a data application development portal, and the closed loop covers the entire process of data application development. With a unified UI, the workflow-like graphical drag-and-drop development experience meets the entire lifecycle of data application development from data import, desensitization cleaning, data analysis, data mining, quality inspection, visualization, scheduling to data output applications, etc.
 
-# *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
-
-**[Click me](https://github.com/WeBankFinTech/Qualitis) to Github repo**
-
-[Qualitis](https://github.com/WeBankFinTech/Qualitis) is a one-stop data quality management platform that supports quality verification, notification, and management for various datasource. It is used to solve various data quality problems caused by data processing.
-
 # *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
 
 **[Click me](https://github.com/WeBankFinTech/Linkis) to Github repo**
@@ -25,6 +19,24 @@
 **[Click me](https://github.com/WeBankFinTech/Scriptis) to Github repo**
 
 [Scriptis](https://github.com/WeBankFinTech/Scriptis) is for interactive data analysis with script development(SQL, Pyspark, HiveQL), task submission(Spark, Hive), UDF, function, resource management and intelligent diagnosis.
+
+# *[Qualitis](https://github.com/WeBankFinTech/Qualitis)* 
+
+**[Click me](https://github.com/WeBankFinTech/Qualitis) to Github repo**
+
+[Qualitis](https://github.com/WeBankFinTech/Qualitis) is a one-stop data quality management platform that supports quality verification, notification, and management for various datasource. It is used to solve various data quality problems caused by data processing.
+
+# *[Schedulis](https://github.com/WeBankFinTech/Schedulis)*
+
+**[Click me](https://github.com/WeBankFinTech/Schedulis) to Github repo**
+
+[Schedulis](https://github.com/WeBankFinTech/Schedulis) is a high performance workflow task scheduling system that supports high availability and multi-tenant financial level features, Linkis computing middleware, and has been integrated into data application development portal DataSphere Studio
+
+# *[Exchangis](https://github.com/WeBankFinTech/Exchangis)*
+
+**[Click me](https://github.com/WeBankFinTech/Exchangis) to Github repo**
+
+[Exchangis](https://github.com/WeBankFinTech/Exchangis) is a lightweight,highly extensible data exchange platform that supports data transmission between structured and unstructured heterogeneous data sources. On the application layer, it has business features such as data permission management and control, high availability of node services and multi-tenant resource isolation. On the data layer, it also has architectural characteristics such as diversified transmission architecture, module plug-in and low coupling of components.
 
 <br>
 More open-source components? Coming soon...
