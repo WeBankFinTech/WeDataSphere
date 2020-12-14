@@ -41,6 +41,12 @@
 
 [Exchangis](https://github.com/WeBankFinTech/Exchangis) is a lightweight,highly extensible data exchange platform that supports data transmission between structured and unstructured heterogeneous data sources. On the application layer, it has business features such as data permission management and control, high availability of node services and multi-tenant resource isolation. On the data layer, it also has architectural characteristics such as diversified transmission architecture, module plug-in and low coupling of components.
 
+# *[Prophecis](https://github.com/WeBankFinTech/Prophecis)*
+
+**[Click me](https://github.com/WeBankFinTech/Prophecis) to Github repo**
+
+[Prophecis](https://github.com/WeBankFinTech/Prophecis) is a one-stop machine learning platform developed by WeBank. It integrates multiple open-source machine learning frameworks, has the multi tenant management capability of machine learning compute cluster, and provides full stack container deployment and management services for production environment.
+
 # More open-source WDS components? Coming soon...
 
 
