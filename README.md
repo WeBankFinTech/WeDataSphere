@@ -3,7 +3,7 @@
 ## WeDataSphere Open Source Components
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis).
 <br>
-![OSProjects](https://github.com/WeBankFinTech/WeDataSphere/blob/master/images/introduction/OSProjects.png)
+![OSProjects](images/introduction/OSPprojects.png)
 
 # *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
