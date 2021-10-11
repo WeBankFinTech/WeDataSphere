@@ -5,17 +5,17 @@
 <br>
 ![OSProjects](images/introduction/OSPprojects.png)
 
+# *[Apache Linkis(Incubating)](https://github.com/WeBankFinTech/Linkis)* 
+
+**[Click me](https://github.com/WeBankFinTech/Linkis) to Github repo**
+
+[Linkis](https://github.com/WeBankFinTech/Linkis) Linkis builds a computation middleware layer to decouple the upper applications and the underlying data engines, provides standardized interfaces (REST, JDBC, WebSocket etc.) to easily connect to various underlying engines (Spark, Presto, Flink, etc.), while enables cross engine context sharing, unified job& engine governance and orchestration.
+
 # *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
 **[Click me](https://github.com/WeBankFinTech/DataSphereStudio) to Github repo**
 
 [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio) is positioned as a data application development portal, and the closed loop covers the entire process of data application development. With a unified UI, the workflow-like graphical drag-and-drop development experience meets the entire lifecycle of data application development from data import, desensitization cleaning, data analysis, data mining, quality inspection, visualization, scheduling to data output applications, etc.
-
-# *[Linkis](https://github.com/WeBankFinTech/Linkis)* 
-
-**[Click me](https://github.com/WeBankFinTech/Linkis) to Github repo**
-
-[Linkis](https://github.com/WeBankFinTech/Linkis) connects with compuation/storage engines(Spark, Flink, Hive, Python and HBase), exposes REST/WS interface, and executes multi-language jobs(SQL, Pyspark, HiveQL and Scala), as a data middleware.
 
 # *[Scriptis](https://github.com/WeBankFinTech/Scriptis)*
 
