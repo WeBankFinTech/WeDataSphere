@@ -9,7 +9,7 @@
 
 **[Click me](https://github.com/WeBankFinTech/Linkis) to Github repo**
 
-[Linkis](https://github.com/WeBankFinTech/Linkis) Linkis builds a computation middleware layer to decouple the upper applications and the underlying data engines, provides standardized interfaces (REST, JDBC, WebSocket etc.) to easily connect to various underlying engines (Spark, Presto, Flink, etc.), while enables cross engine context sharing, unified job& engine governance and orchestration.
+[Linkis](https://github.com/WeBankFinTech/Linkis) builds a computation middleware layer to decouple the upper applications and the underlying data engines, provides standardized interfaces (REST, JDBC, WebSocket etc.) to easily connect to various underlying engines (Spark, Presto, Flink, etc.), while enables cross engine context sharing, unified job& engine governance and orchestration.
 
 # *[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio)* 
 
