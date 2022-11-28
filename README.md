@@ -1,9 +1,9 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
 ## WeDataSphere Open Source Components
-[DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis).
+Project with the blue "S" ball in the image below is open-sourced. Including [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis), [Visualis](https://github.com/WeBankFinTech/Visualis), [Prophecis](https://github.com/WeBankFinTech/Prophecis).
 <br>
-![OSProjects](images/introduction/OSPprojects.png)
+![OSProjects](images/introduction/WeDataSphere%20all-in-one-202211.png)
 
 # *[Apache Linkis(Incubating)](https://github.com/WeBankFinTech/Linkis)* 
 
