@@ -41,6 +41,12 @@
 
 [Exchangis](https://github.com/WeBankFinTech/Exchangis) is a lightweight,highly extensible data exchange platform that supports data transmission between structured and unstructured heterogeneous data sources. On the application layer, it has business features such as data permission management and control, high availability of node services and multi-tenant resource isolation. On the data layer, it also has architectural characteristics such as diversified transmission architecture, module plug-in and low coupling of components.
 
+# *[Visualis](https://github.com/WeBankFinTech/Visualis)*
+
+**[Click me](https://github.com/WeBankFinTech/Visualis) to Github repo**
+
+[Visualis](https://github.com/WeBankFinTech/Visualis) Visualis is an open source project based on Yixin Davinci Developed data visualization Bi tool. It has been integrated into the data application development portal Datasphere Studio in this release, Visualis 1.0.0 supports Linkis 1.1.1 and DSS 1.1.0.
+
 # *[Prophecis](https://github.com/WeBankFinTech/Prophecis)*
 
 **[Click me](https://github.com/WeBankFinTech/Prophecis) to Github repo**
