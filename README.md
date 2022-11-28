@@ -1,7 +1,7 @@
 [English](README.md) | [中文](README_zh_CN.md)
 
 ## WeDataSphere Open Source Components
-Project with the blue "S" ball in the image below is open-sourced. Including [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis), [Visualis](https://github.com/WeBankFinTech/Visualis), [Prophecis](https://github.com/WeBankFinTech/Prophecis).
+Project with the blue "S" ball in the image below is open-sourced. Including [DataSphere Studio](https://github.com/WeBankFinTech/DataSphereStudio), [Linkis](https://github.com/WeBankFinTech/Linkis), [Scriptis](https://github.com/WeBankFinTech/Scriptis), [Qualitis](https://github.com/WeBankFinTech/Qualitis), [Schedulis](https://github.com/WeBankFinTech/Schedulis), [Exchangis](https://github.com/WeBankFinTech/Exchangis), [Visualis](https://github.com/WeBankFinTech/Visualis), [Prophecis](https://github.com/WeBankFinTech/Prophecis), [Streamis](https://github.com/WeBankFinTech/Streamis).
 <br>
 ![OSProjects](images/introduction/WeDataSphere%20all-in-one-202211.png)
 
@@ -53,8 +53,13 @@ Project with the blue "S" ball in the image below is open-sourced. Including [Da
 
 [Prophecis](https://github.com/WeBankFinTech/Prophecis) is a one-stop machine learning platform developed by WeBank. It integrates multiple open-source machine learning frameworks, has the multi tenant management capability of machine learning compute cluster, and provides full stack container deployment and management services for production environment.
 
-# More open-source WDS components? Coming soon...
+# *[Streamis](https://github.com/WeBankFinTech/Streamis)*
 
+**[Click me](https://github.com/WeBankFinTech/Streamis) to Github repo**
+
+[Streamis](https://github.com/WeBankFinTech/Streamis) is an jointed development project for Streaming application development and management established by WeBank, CtYun, Samoyed Financial Cloud and XianWeng Technology.
+
+# More open-source WDS components? Coming soon...
 
 ## WeDataSphere Introduction
 
