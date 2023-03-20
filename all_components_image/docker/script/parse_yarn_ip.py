@@ -53,7 +53,8 @@ def get_yarn_ips(nodelist, kv_map):
 
 
 def run():
-    tree = read_xml("/wedatasphere/cdh/config/hadoop/yarn-site.xml")
+    tree = read_xml("/etc/hadoop/conf/yarn-site.xml")
+    # tree = read_xml("/wedatasphere/cdh/config/hadoop/yarn-site.xml")
     nodes = find_nodes(tree, "property")
     ips = get_yarn_ips(nodes, {"name": "yarn.resourcemanager.ha.rm-ids"})
     ips = ["http://" + ip for ip in ips if "http://" not in ip]
