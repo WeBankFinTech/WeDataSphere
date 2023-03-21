@@ -3,11 +3,9 @@ docker run  --name dss_linkis_server_v1 \
 -h dss.node.cn \
 -e HOST_IP=172.16.13.133 \
 -v /opt/cloudera/parcels/CDH:/wedatasphere/cdh \
--v /usr/local/service/spark3:/wedatasphere/service/spark3 \
--v /opt/cloudera/parcels/FLINK:/wedatasphere/service/flink \
--v /etc/hadoop/conf:/wedatasphere/cdh/config/hadoop \
--v /etc/sqoop/conf:/wedatasphere/cdh/config/sqoop \
--v /etc/hive/conf:/wedatasphere/cdh/config/hive \
+-v /opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554 \
+-v /usr/local/service/spark3:/opt/service/spark3 \
+-v /opt/cloudera/parcels/FLINK:/opt/service/flink \
 -v /etc/hadoop/conf:/etc/hadoop/conf \
 -v /etc/sqoop/conf:/etc/sqoop/conf \
 -v /etc/hive/conf:/etc/hive/conf \
