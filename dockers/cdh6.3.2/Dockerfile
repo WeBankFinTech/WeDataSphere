@@ -1,4 +1,4 @@
-FROM harbor.bigdata.cn/dss_linkis:v1
+FROM dss_linkis:v1
 
 MAINTAINER Zsy "mr.zshuya@gmail.com"
 
