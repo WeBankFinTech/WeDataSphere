@@ -6,8 +6,8 @@ echo "启动nginx"
 echo "配置hdfs路径"
 source /etc/profile
 echo "${CDH_HOME}"
-sh ${CDH_HOME}/bin/hdfs dfs -mkdir -p /tmp/test_zsy/linkis
-sh ${CDH_HOME}/bin/hdfs dfs -chmod 775 /tmp/test_zsy/linkis
+sh ${CDH_HOME}/bin/hdfs dfs -mkdir -p /tmp/test/linkis
+sh ${CDH_HOME}/bin/hdfs dfs -chmod 775 /tmp/test/linkis
 echo "初始化配置文件"
 python3 /wedatasphere/docker/script/db_update.py 
 python3 /wedatasphere/docker/script/update_config.py 
