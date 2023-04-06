@@ -45,6 +45,8 @@ def get_yarn_ips(nodelist, kv_map):
         if name == kv_map.get("name"):
             for i in node.find('value').text.split(","):
                 k_list.append("yarn.resourcemanager.webapp.address." + i)
+        if not k_list:
+            k_list.append("yarn.resourcemanager.webapp.address")
     for node in nodelist:
         name = node.find('name').text
         if name in k_list:
