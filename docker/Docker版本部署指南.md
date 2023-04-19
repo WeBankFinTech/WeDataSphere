@@ -1,6 +1,6 @@
 ## WeDataSphere组件容器化部署文档
 
-> 为让用户能够快速体验WeDataSphere所有组件，我们提供一个使用Docker构建的镜像包，里面包括基础组件Hadoop, Spark, Hive, Flink, MySQL。WeDataSphere的组件有DSS，Linkis，Schedulis, Qualitis, Visualis, Exchangis。您只需要准备一台内存大小为32G，磁盘100G的机器，按照如下步骤操作就能够在半小时内完成所有服务的部署与使用。
+> 为让用户能够快速体验WeDataSphere所有组件，我们提供一个使用Docker构建的镜像包，里面包括基础组件Hadoop, Spark, Hive, Flink, MySQL。WeDataSphere的组件有DSS，Linkis，Schedulis, Qualitis, Visualis, Exchangis。您只需要准备一台内存大小为32G，磁盘100G的机器，系统推荐使用CentOS或Red Hat，不推荐Ubuntu。按照如下步骤操作就能够在半小时内完成所有服务的部署与使用。
 
 ### 一、准备工作
 1. 需要准备一台内存大小最少为32G，磁盘大小约为100G的服务器，部署前请确保该服务器上无其他服务在运行，以避免端口冲突
