@@ -56,8 +56,8 @@ docker exec -it wedatasphere /bin/bash
 
 5. 在容器中切换用到hadoop用户和切换目录到/data/docker下
 ```shell
+su hadoop
 cd /data/docker
-sh docker_start_all.sh
 ```
 
 6. 执行脚本docker_start_all.sh，无报错的情况下就可以去登录DSS并使用
