@@ -24,7 +24,7 @@ docker run hello-world
 ```
 *docker的安装因网络环境的差异，上述步骤可能无法完全适配，用户可根据实际网络环境安装docker并保证docker可用*
 
-3. 下载WeDataSphere容器化镜像包[点我下载](https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeDatasphere/DataSphereStudio/1.1.1/wedatasphere.tar.gz)
+3. 下载WeDataSphere容器化镜像包[点我下载](https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeDatasphere/DataSphereStudio/wedatasphere.tar.gz)
 
 **镜像包较大，请在空闲时间下载**
 
@@ -54,7 +54,7 @@ docker run -itd --name='wedatasphere' --privileged -p 8085:8085 -p 8087:8087 -p 
 docker exec -it wedatasphere /bin/bash
 ```
 
-5. 在容器中切换用到hadoop用户和切换目录到/data/docker下
+5. 在容器中切换到hadoop用户和切换目录到/data/docker下
 ```shell
 su hadoop
 cd /data/docker
