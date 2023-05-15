@@ -30,7 +30,7 @@ ARG SPARK_HADOOP_VERSION=2.6
 ARG FLINK_VERSION=1.12.2
 ARG SQOOP_VERSION=1.4.6
 ARG VISUALIS_VERSION=1.0.0
-ARG EXCHANGIS_VERSION=1.0.0
+ARG EXCHANGIS_VERSION=1.1.1
 ARG SCHEDULIS_VERSION=0.7.1
 ARG STREAMIS_VERSION=0.2.0
 ARG QUALITIS_VERSION=0.9.2
@@ -78,7 +78,8 @@ RUN mkdir -p /wedatasphere/sbin \
     && mkdir -p /wedatasphere/logs/mysql \
     && mkdir -p /var/lib/mysql \
     $$ mkdir -p ${WORKSPACE_USER_ROOT_PATH}/${LINKIS_SYSTEM_USER} \
-    && mkdir -p ${ENGINECONN_ROOT_PATH}/${LINKIS_SYSTEM_USER} 
+    && mkdir -p ${ENGINECONN_ROOT_PATH}/${LINKIS_SYSTEM_USER} \
+    && mkdir -p /wedatasphere/scripts/
 
 ENV JAVA_HOME /usr/java/jdk1.8.0_181-cloudera
 ENV SPARK_HOME /wedatasphere/install/spark-2.4.3-bin-hadoop2.6
@@ -116,11 +117,14 @@ ADD target/wds-tars/flink-${FLINK_VERSION}-bin-scala_2.11.tgz /wedatasphere/inst
 ADD target/wds-tars/lib.tar.gz /wedatasphere/install/flink-${FLINK_VERSION}
 ADD target/wds-tars/sqoop-${SQOOP_VERSION}.bin__hadoop-2.0.4-alpha.tar.gz /wedatasphere/install
 ADD target/wds-tars/jdk1.8.0_181-cloudera.tar.gz /
+#ADD target/wds-tars/cdh.tar.gz /opt
 ADD target/wds-tars/mysql-5.7.36-el7-x86_64.tar.gz /wedatasphere/install
 COPY target/wds-tars/visualis_${VISUALIS_VERSION}_install_package.zip /wedatasphere/tmp/visualis
 ADD target/wds-tars/wedatasphere-exchangis-${EXCHANGIS_VERSION}.tar.gz /wedatasphere/install/exchangis
-COPY target/wds-tars/dist.zip /wedatasphere/tmp/exchangis
+#COPY target/wds-tars/dist.zip /wedatasphere/tmp/exchangis
+ADD target/wds-tars/dist.tar.gz ${DSS_WEB_ROOT}/dss/exchangis/web
 COPY target/wds-tars/exchangis-appconn.zip /wedatasphere/tmp/exchangis
+COPY target/wds-tars/datax_engine.zip /wedatasphere/tmp/exchangis
 COPY target/wds-tars/schedulis_${SCHEDULIS_VERSION}_exec.zip /wedatasphere/tmp/schedulis
 COPY target/wds-tars/schedulis_${SCHEDULIS_VERSION}_web.zip /wedatasphere/tmp/schedulis
 ADD target/wds-tars/wedatasphere-streamis-${STREAMIS_VERSION}-dist.tar.gz /wedatasphere/install/streamis
@@ -143,13 +147,20 @@ COPY target/wds-tars/jdbc.zip /wedatasphere/tmp/linkis
 COPY target/wds-tars/openlookeng.zip /wedatasphere/tmp/linkis
 COPY target/wds-tars/pipeline.zip /wedatasphere/tmp/linkis
 COPY target/wds-tars/seatunnel.zip /wedatasphere/tmp/linkis
+COPY target/wds-tars/datax.zip /wedatasphere/tmp/linkis
 COPY mysql-config/my.cnf /etc/my.cnf
 COPY sbin/*.sh /wedatasphere/sbin/
+COPY scripts/*.sh /wedatasphere/scripts/
 COPY target/wds-tars/execute-as-user /wedatasphere/tmp/schedulis
 COPY schedulis-config /wedatasphere/config/schedulis-config
 COPY target/wds-tars/phantomjs /wedatasphere/tmp/visualis
 COPY target/wds-tars/hdp_schedulis_deploy_script.sql /wedatasphere/install/schedulis/db
+COPY target/wds-tars/ddl.sql /wedatasphere/tmp/visualis
+COPY target/wds-tars/davinci.sql /wedatasphere/tmp/visualis
 
+    #ln -sf /opt/cloudera/parcels/CDH-5.16.1-1.cdh5.16.1.p0.3 /opt/cloudera/parcels/CDH \
+    #&& ln -sf /opt/cloudera/parcels/KAFKA-3.1.0-1.3.1.0.p0.35 /opt/cloudera/parcels/KAFKA \
+    #&& ln -sf /opt/cloudera/parcels/SPARK2-2.3.0.cloudera4-1.cdh5.13.3.p0.611179 /opt/cloudera/parcels/SPARK2 \
 RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && mv /wedatasphere/tmp/dss/db ${DSS_HOME}/db \
     && mv /wedatasphere/tmp/dss/bin ${DSS_HOME}/bin \
@@ -185,7 +196,11 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && unzip -d /wedatasphere/install/streamis -o /wedatasphere/install/streamis/share/streamis-server/streamis-server.zip \
     && unzip -d ${DSS_WEB_ROOT}/dss/streamis -o /wedatasphere/tmp/streamis/streamis-${STREAMIS_VERSION}-dist.zip \
     && tar -zxf  /wedatasphere/install/exchangis/packages/exchangis-server_${EXCHANGIS_VERSION}.tar.gz -C /wedatasphere/install/exchangis \
-    && unzip -d ${DSS_WEB_ROOT}/dss/exchangis/web -o /wedatasphere/tmp/exchangis/dist.zip \
+    && mkdir -p /wedatasphere/install/exchangis/engine/datax \
+    && unzip -d /wedatasphere/install/exchangis/engine/datax -o datax_engine.zip \
+    && cp /wedatasphere/tmp/linkis/hadoop-mapreduce-client-common-2.6.0-cdh5.16.1.jar /wedatasphere/install/exchangis/engine/datax/plugin/reader/hdfsreader/libs/ \
+    && cp /wedatasphere/tmp/linkis/hadoop-mapreduce-client-common-2.6.0-cdh5.16.1.jar /wedatasphere/install/exchangis/engine/datax/plugin/writer/hdfswriter/libs/ \
+    #&& unzip -d ${DSS_WEB_ROOT}/dss/exchangis/web -o /wedatasphere/tmp/exchangis/dist.zip \
     && unzip -d ${LINKIS_PLUGINS_PATH} -o /wedatasphere/tmp/linkis/presto.zip \
     && unzip -d ${LINKIS_PLUGINS_PATH} -o /wedatasphere/tmp/linkis/trino.zip \
     && unzip -d ${LINKIS_PLUGINS_PATH} -o /wedatasphere/tmp/linkis/sqoop.zip \
@@ -196,7 +211,8 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && unzip -d ${LINKIS_PLUGINS_PATH} -o /wedatasphere/tmp/linkis/openlookeng.zip \
     && unzip -d ${LINKIS_PLUGINS_PATH} -o /wedatasphere/tmp/linkis/pipeline.zip \
     && unzip -d ${LINKIS_PLUGINS_PATH} -o /wedatasphere/tmp/linkis/seatunnel.zip \
-    && mv /wedatasphere/tmp/linkis/hadoop-mapreduce-client-common-2.6.0-cdh5.16.1.jar ${LINKIS_HOME}/lib/linkis-public-enhancements/linkis-ps-publicservice/metadataquery-service/hive \
+    && unzip -d ${LINKIS_PLUGINS_PATH} -o /wedatasphere/tmp/linkis/datax.zip \
+    && cp /wedatasphere/tmp/linkis/hadoop-mapreduce-client-common-2.6.0-cdh5.16.1.jar ${LINKIS_HOME}/lib/linkis-public-enhancements/linkis-ps-publicservice/metadataquery-service/hive \
     && mv ${LINKIS_PLUGINS_PATH}/hive/plugin/1.1.0-cdh5.16.1 ${LINKIS_PLUGINS_PATH}/hive/plugin/1.1.0_cdh5.16.1 \
     && mv ${LINKIS_PLUGINS_PATH}/hive/dist/v1.1.0-cdh5.16.1 ${LINKIS_PLUGINS_PATH}/hive/dist/v1.1.0_cdh5.16.1 \
     && sed -i 's/127.0.0.1/wds/g' ${LINKIS_HOME}/sbin/common.sh \
@@ -216,6 +232,8 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && chmod +x /wedatasphere/install/schedulis/schedulis_${SCHEDULIS_VERSION}_web/bin/*.sh \
     && chmod +x /wedatasphere/install/schedulis/schedulis_${SCHEDULIS_VERSION}_web/bin/internal/*.sh \
     && chmod +x /wedatasphere/install/visualis-server/bin/* \
+    && mkdir -p /wedatasphere/install/visualis-server/db \
+    && cp /wedatasphere/tmp/visualis/*.sql /wedatasphere/install/visualis-server/db \
     && ln -sf /wedatasphere/install/schedulis/schedulis_${SCHEDULIS_VERSION}_exec /wedatasphere/install/schedulis/schedulis-exec \
     && ln -sf /wedatasphere/config/schedulis-config/schedulis-exec/azkaban.properties /wedatasphere/install/schedulis/schedulis-exec/conf/azkaban.properties \
     && ln -sf /wedatasphere/config/schedulis-config/schedulis-exec/common.properties /wedatasphere/install/schedulis/schedulis-exec/plugins/jobtypes/common.properties \
@@ -261,6 +279,9 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && sed -i "s#EXCHANGIS_PORT={PORT}#EXCHANGIS_PORT=9321#g" /wedatasphere/install/exchangis/config/config.sh \
     && sed -i "s#EUREKA_URL=http://{IP:PORT}/eureka/#EUREKA_URL=http://wds:9001/eureka/#g" /wedatasphere/install/exchangis/config/config.sh \
     && echo "wds.exchangis.job.log.local.path=/wedatasphere/logs/exchangis/main/logs" >> /wedatasphere/install/exchangis/config/exchangis-server.properties \
+    && sed -i "s#exchangis-server#exchangis-#g" /wedatasphere/install/exchangis/sbin/env.properties \
+    && sed -i "s#/appcom/config/exchangis-config#/wedatasphere/install/exchangis/config#g" /wedatasphere/install/exchangis/sbin/env.properties \
+    && sed -i "s#/appcom/logs/exchangis-log#/wedatasphere/logs/exchangis#g" /wedatasphere/install/exchangis/sbin/env.properties \
     && dos2unix /wedatasphere/install/qualitis-0.9.2/bin/* \
     && sed -i "s#127.0.0.1#wds#g" /wedatasphere/install/streamis/conf/config.sh \
     && sed -i "s#/appcom/Install/streamis#/wedatasphere/install/streamis#g" /wedatasphere/install/streamis/conf/config.sh \
@@ -280,19 +301,22 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && sed -i "s#logs/#/wedatasphere/logs/streamis/#g" /wedatasphere/install/streamis/streamis-server/conf/log4j2.xml \
     && find /wedatasphere/install -name jasper-compiler-5.5.23.jar -type f -print -delete \
     && find /wedatasphere/install -name jasper-runtime-5.5.23.jar -type f -print -delete \
+    && find /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/datax -name logback-core-1.2.3.jar -type f -print -delete \
+    && find /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/datax -name logback-classic-1.2.3.jar -type f -print -delete \
     && mkdir -p ${MYSQL_HOME}/data \
     && cp ${MYSQL_HOME}/support-files/mysql.server /etc/init.d/mysql \
+    && cp  /wedatasphere/install/qualitis-0.9.2/lib/mysql-connector-java-5.1.49.jar /wedatasphere/install/visualis-server/lib/ \
     && cp  /wedatasphere/install/qualitis-0.9.2/lib/mysql-connector-java-5.1.49.jar /wedatasphere/install/spark-2.4.3-bin-hadoop2.6/jars/ \
     && cp  /wedatasphere/install/qualitis-0.9.2/lib/mysql-connector-java-5.1.49.jar /wedatasphere/install/sqoop-1.4.6.bin__hadoop-2.0.4-alpha/lib \
-    && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-commons/public-module/ \
-    && rm /wedatasphere/install/linkis/lib/linkis-commons/public-module/mysql-connector-java-8.0.28.jar \
+    #&& cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-commons/public-module/ \
+    #&& rm /wedatasphere/install/linkis/lib/linkis-commons/public-module/mysql-connector-java-8.0.28.jar \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/appconn/dist/v1/lib/ \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/presto/dist/v0.255/lib/ \
     && rm /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/presto/dist/v0.255/lib/mysql-connector-java-8.0.28.jar \
-    && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/lib/ \
-    && rm /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/lib//mysql-connector-java-8.0.28.jar \
-    && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-spring-cloud-services/linkis-mg-gateway/ \
-    && rm /wedatasphere/install/linkis/lib/linkis-spring-cloud-services/linkis-mg-gateway/mysql-connector-java-8.0.28.jar \
+    #&& cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/lib/ \
+    #&& rm /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/lib/mysql-connector-java-8.0.28.jar \
+    #&& cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-spring-cloud-services/linkis-mg-gateway/ \
+    #&& rm /wedatasphere/install/linkis/lib/linkis-spring-cloud-services/linkis-mg-gateway/mysql-connector-java-8.0.28.jar \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/streamis/streamis-server/lib/ \
     && rm /wedatasphere/install/streamis/streamis-server/lib/mysql-connector-java-5.1.47.jar \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/streamis/streamis-server/lib/ \
@@ -304,9 +328,7 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/schedulis/schedulis_0.7.1_exec/plugins/jobtypes/datachecker/extlib/ \
     && rm /wedatasphere/install/schedulis/schedulis_0.7.1_exec/plugins/jobtypes/datachecker/extlib/mysql-connector-java-8.0.18.jar \    
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/schedulis/schedulis_0.7.1_exec/lib/ \
-    && rm /wedatasphere/install/schedulis/schedulis_0.7.1_exec/lib/mysql-connector-java-8.0.18.jar \
-    && cp /wedatasphere/install/flink-1.12.2/lib/flink-connector-mysql-cdc-1.1.1.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/flink/dist/v1.12.2/lib/
-
+    && rm /wedatasphere/install/schedulis/schedulis_0.7.1_exec/lib/mysql-connector-java-8.0.18.jar
 USER ${LINKIS_SYSTEM_USER}
 RUN  ssh-keygen -t rsa -f /home/${LINKIS_SYSTEM_USER}/.ssh/id_rsa \
      && cp /home/${LINKIS_SYSTEM_USER}/.ssh/id_rsa.pub /home/${LINKIS_SYSTEM_USER}/.ssh/authorized_keys \
