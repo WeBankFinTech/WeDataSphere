@@ -4,7 +4,7 @@
 <configuration>
   <property>
     <name>hive.metastore.uris</name>
-    <value>thrift://cdhdev01.gzcb.com.cn:9083</value>
+    <value>thrift://cdhdev01.xxxx.com.cn:9083</value>
   </property>
   <property>
     <name>hive.metastore.client.socket.timeout</name>
@@ -181,7 +181,7 @@
   <!--'hive.support.concurrency', originally set to 'true' (non-final), is overridden below by a safety valve-->
   <property>
     <name>hive.zookeeper.quorum</name>
-    <value>cdhdev03.gzcb.com.cn,cdhdev01.gzcb.com.cn,cdhdev02.gzcb.com.cn</value>
+    <value>cdhdev03.xxxx.com.cn,cdhdev01.xxxx.com.cn,cdhdev02.xxxx.com.cn</value>
   </property>
   <property>
     <name>hive.zookeeper.client.port</name>
@@ -193,7 +193,7 @@
   </property>
   <property>
     <name>hbase.zookeeper.quorum</name>
-    <value>cdhdev03.gzcb.com.cn,cdhdev01.gzcb.com.cn,cdhdev02.gzcb.com.cn</value>
+    <value>cdhdev03.xxxx.com.cn,cdhdev01.xxxx.com.cn,cdhdev02.xxxx.com.cn</value>
   </property>
   <property>
     <name>hbase.zookeeper.property.clientPort</name>
@@ -221,7 +221,7 @@
   </property>
   <property>
     <name>hive.server2.authentication.kerberos.principal</name>
-    <value>hive/cdhdevvirtual.gzcb.com.cn@DEV.COM</value>
+    <value>hive/cdhdevvirtual.xxxx.com.cn@DEV.COM</value>
   </property>
   <property>
     <name>spark.shuffle.service.enabled</name>

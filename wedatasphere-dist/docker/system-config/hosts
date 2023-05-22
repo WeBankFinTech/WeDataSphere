@@ -1,9 +1,9 @@
-186.137.170.125 dssdev01.gzcb.com.cn
-186.137.170.129 dssdev02.gzcb.com.cn
-186.137.170.23  cdhdev01.gzcb.com.cn
-186.137.170.24  cdhdev02.gzcb.com.cn
-186.137.170.25  cdhdev03.gzcb.com.cn
-186.137.170.107 cdhdevvirtual.gzcb.com.cn
-186.137.170.59  kylindev01.gzcb.com.cn
-186.137.170.60  kylindev02.gzcb.com.cn
+186.137.170.125 dssdev01.xxxx.com.cn
+186.137.170.129 dssdev02.xxxx.com.cn
+186.137.170.23  cdhdev01.xxxx.com.cn
+186.137.170.24  cdhdev02.xxxx.com.cn
+186.137.170.25  cdhdev03.xxxx.com.cn
+186.137.170.107 cdhdevvirtual.xxxx.com.cn
+186.137.170.59  kylindev01.xxxx.com.cn
+186.137.170.60  kylindev02.xxxx.com.cn
 186.137.170.60  wds

@@ -48,8 +48,8 @@
   </property>
   <property>
     <name>hadoop.security.auth_to_local</name>
-    <value>RULE:[1:$1@$0](.*@\QGZCB.COM.CN\E$)s/@\QGZCB.COM.CN\E$//
-RULE:[2:$1@$0](.*@\QGZCB.COM.CN\E$)s/@\QGZCB.COM.CN\E$//
+    <value>RULE:[1:$1@$0](.*@\QXXXX.COM.CN\E$)s/@\QXXXX.COM.CN\E$//
+RULE:[2:$1@$0](.*@\QXXXX.COM.CN\E$)s/@\QXXXX.COM.CN\E$//
 RULE:[1:$1@$0](.*@\QTEST.COM\E$)s/@\QTEST.COM\E$//
 RULE:[2:$1@$0](.*@\QTEST.COM\E$)s/@\QTEST.COM\E$//
 DEFAULT</value>

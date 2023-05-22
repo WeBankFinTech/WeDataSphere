@@ -30,11 +30,11 @@ JAVA_HOME=/wedatasphere/install/jdk1.8.0_361
 hadoopVersion=2.6.0-cdh5.16.1
 HADOOP_HOME=/opt/cloudera/parcels/CDH/lib/hadoop
 HADOOP_CONF_DIR=/wedatasphere/config/hadoop-config
-YARN_RESTFUL_URL=http://cdhdev02.gzcb.com.cn
+YARN_RESTFUL_URL=http://cdhdev02.xxxx.com.cn
 HIVE_HOME=/opt/cloudera/parcels/CDH/lib/hive
 HIVE_CONF_DIR=/wedatasphere/config/hive-config
 HADOOP_CLASSPATH=`hadoop classpath`
-HIVE_META_URL=jdbc:mysql://cdhdev01.gzcb.com.cn:3306/metastore?useUnicode=true
+HIVE_META_URL=jdbc:mysql://cdhdev01.xxxx.com.cn:3306/metastore?useUnicode=true
 HIVE_META_USER=hive
 HIVE_META_PASSWORD=password
 SPARK_HOME=/wedatasphere/install/spark-2.4.3-bin-hadoop2.6

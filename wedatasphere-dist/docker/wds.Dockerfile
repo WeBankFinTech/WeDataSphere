@@ -87,7 +87,7 @@ ENV SPARK_CONF_DIR /wedatasphere/install/spark-2.4.3-bin-hadoop2.6/conf
 ENV HIVE_HOME /opt/cloudera/parcels/CDH/lib/hive
 ENV HIVE_CONF_DIR /etc/hive/conf
 ENV hadoopVersion 2.6.0-cdh5.16.1
-ENV YARN_RESTFUL_URL http://cdhdev02.gzcb.com.cn:8088
+ENV YARN_RESTFUL_URL http://cdhdev02.xxxx.com.cn:8088
 ENV HADOOP_HOME /opt/cloudera/parcels/CDH/lib/hadoop
 ENV HADOOP_CONF_DIR /etc/hadoop/conf
 ENV SQOOP_HOME /wedatasphere/install/sqoop-1.4.6.bin__hadoop-2.0.4-alpha
@@ -219,7 +219,7 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && sed -i 's/return 1/return 0/g' ${LINKIS_HOME}/sbin/common.sh \
     && sed -i 's/hive-2.3.3/hive-1.1.0_cdh5.16.1/g' ${LINKIS_HOME}/bin/linkis-cli-hive \
     && sed -i 's/hive-2.3.3/hive-1.1.0_cdh5.16.1/g' ${LINKIS_HOME}/db/linkis_dml.sql \
-    && sed -i 's#@YARN_RESTFUL_URL#http://cdhdev02.gzcb.com.cn:8088#g' ${LINKIS_HOME}/db/linkis_dml.sql \
+    && sed -i 's#@YARN_RESTFUL_URL#http://cdhdev02.xxxx.com.cn:8088#g' ${LINKIS_HOME}/db/linkis_dml.sql \
     && sed -i 's#@HADOOP_VERSION#2.6.0-cdh5.16.1#g' ${LINKIS_HOME}/db/linkis_dml.sql \
     && sed -i 's/presto-0.234/presto-0.255/g' ${LINKIS_HOME}/db/linkis_dml.sql \
     && sed -i 's#/appcom/Install/dss/dss-appconns/workflow#/wedatasphere/install/dss/dss-appconns/workflow#g' ${DSS_HOME}/db/dss_dml.sql \

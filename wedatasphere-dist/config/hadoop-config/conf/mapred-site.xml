@@ -80,19 +80,19 @@
   </property>
   <property>
     <name>mapreduce.jobhistory.address</name>
-    <value>cdhdev01.gzcb.com.cn:10020</value>
+    <value>cdhdev01.xxxx.com.cn:10020</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.webapp.address</name>
-    <value>cdhdev01.gzcb.com.cn:19888</value>
+    <value>cdhdev01.xxxx.com.cn:19888</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.webapp.https.address</name>
-    <value>cdhdev01.gzcb.com.cn:19890</value>
+    <value>cdhdev01.xxxx.com.cn:19890</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.admin.address</name>
-    <value>cdhdev01.gzcb.com.cn:10033</value>
+    <value>cdhdev01.xxxx.com.cn:10033</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.principal</name>

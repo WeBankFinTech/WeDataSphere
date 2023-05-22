@@ -2,7 +2,7 @@ spring:
   datasource:
     username: qualitis
     password: qualitis
-    url: jdbc:mysql://kylindev01.gzcb.com.cn:3306/qualitis?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://kylindev01.xxxx.com.cn:3306/qualitis?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
@@ -32,7 +32,7 @@ task:
     type: jdbc
     username: qualitis
     password: qualitis
-    address: jdbc:mysql://kylindev01.gzcb.com.cn:3306/qualitis?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8
+    address: jdbc:mysql://kylindev01.xxxx.com.cn:3306/qualitis?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8
     tableName: qualitis_application_task_result
   execute:
     limit_thread: 10

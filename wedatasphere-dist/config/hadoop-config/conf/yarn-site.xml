@@ -28,7 +28,7 @@
   </property>
   <property>
     <name>yarn.resourcemanager.zk-address</name>
-    <value>cdhdev03.gzcb.com.cn:2181,cdhdev01.gzcb.com.cn:2181,cdhdev02.gzcb.com.cn:2181</value>
+    <value>cdhdev03.xxxx.com.cn:2181,cdhdev01.xxxx.com.cn:2181,cdhdev02.xxxx.com.cn:2181</value>
   </property>
   <property>
     <name>yarn.resourcemanager.store.class</name>
@@ -48,51 +48,51 @@
   </property>
   <property>
     <name>yarn.resourcemanager.address.rm76</name>
-    <value>cdhdev01.gzcb.com.cn:8032</value>
+    <value>cdhdev01.xxxx.com.cn:8032</value>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.address.rm76</name>
-    <value>cdhdev01.gzcb.com.cn:8030</value>
+    <value>cdhdev01.xxxx.com.cn:8030</value>
   </property>
   <property>
     <name>yarn.resourcemanager.resource-tracker.address.rm76</name>
-    <value>cdhdev01.gzcb.com.cn:8031</value>
+    <value>cdhdev01.xxxx.com.cn:8031</value>
   </property>
   <property>
     <name>yarn.resourcemanager.admin.address.rm76</name>
-    <value>cdhdev01.gzcb.com.cn:8033</value>
+    <value>cdhdev01.xxxx.com.cn:8033</value>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.address.rm76</name>
-    <value>cdhdev01.gzcb.com.cn:8088</value>
+    <value>cdhdev01.xxxx.com.cn:8088</value>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.https.address.rm76</name>
-    <value>cdhdev01.gzcb.com.cn:8090</value>
+    <value>cdhdev01.xxxx.com.cn:8090</value>
   </property>
   <property>
     <name>yarn.resourcemanager.address.rm94</name>
-    <value>cdhdev02.gzcb.com.cn:8032</value>
+    <value>cdhdev02.xxxx.com.cn:8032</value>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.address.rm94</name>
-    <value>cdhdev02.gzcb.com.cn:8030</value>
+    <value>cdhdev02.xxxx.com.cn:8030</value>
   </property>
   <property>
     <name>yarn.resourcemanager.resource-tracker.address.rm94</name>
-    <value>cdhdev02.gzcb.com.cn:8031</value>
+    <value>cdhdev02.xxxx.com.cn:8031</value>
   </property>
   <property>
     <name>yarn.resourcemanager.admin.address.rm94</name>
-    <value>cdhdev02.gzcb.com.cn:8033</value>
+    <value>cdhdev02.xxxx.com.cn:8033</value>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.address.rm94</name>
-    <value>cdhdev02.gzcb.com.cn:8088</value>
+    <value>cdhdev02.xxxx.com.cn:8088</value>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.https.address.rm94</name>
-    <value>cdhdev02.gzcb.com.cn:8090</value>
+    <value>cdhdev02.xxxx.com.cn:8090</value>
   </property>
   <property>
     <name>yarn.resourcemanager.ha.rm-ids</name>

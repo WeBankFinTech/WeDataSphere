@@ -70,11 +70,11 @@ EVENTCHECKER_JDBC_USERNAME=linkis
 EVENTCHECKER_JDBC_PASSWORD=linkis
 
 #### hive地址
-DATACHECKER_JOB_JDBC_URL=jdbc:mysql://cdhdev01.gzcb.com.cn:3306/metastore?useUnicode=true
+DATACHECKER_JOB_JDBC_URL=jdbc:mysql://cdhdev01.xxxx.com.cn:3306/metastore?useUnicode=true
 DATACHECKER_JOB_JDBC_USERNAME=hive
 DATACHECKER_JOB_JDBC_PASSWORD=password
 #### 元数据库，可配置成和DATACHECKER_JOB
-DATACHECKER_BDP_JDBC_URL=jdbc:mysql://cdhdev01.gzcb.com.cn:3306/metastore?useUnicode=true
+DATACHECKER_BDP_JDBC_URL=jdbc:mysql://cdhdev01.xxxx.com.cn:3306/metastore?useUnicode=true
 DATACHECKER_BDP_JDBC_USERNAME=hive
 DATACHECKER_BDP_JDBC_PASSWORD=password
 ############## ############## dss_appconn_instance configuration   end   ############## ##############
