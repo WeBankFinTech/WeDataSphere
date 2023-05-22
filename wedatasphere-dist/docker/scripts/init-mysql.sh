@@ -54,8 +54,8 @@ mysql -uroot -proot -e "use visualis;grant all privileges on visualis to 'visual
 mysql -uroot -proot -e "use visualis;grant all on visualis.* to visualis@'%';"
 mysql -uroot -proot -e "flush privileges;"
 mysql -uvisualis -pvisualis -e "use visualis;"
-mysql --default-character-set=utf8 --socket=/var/lib/mysql/mysql.sock -uvisualis -pvisualis -Dvisualis  --default-character-set=utf8 -e "source /wedatasphere/install/visualis-server/db/davinci.sql"
-mysql --default-character-set=utf8 --socket=/var/lib/mysql/mysql.sock -uvisualis -pvisualis -Dvisualis  --default-character-set=utf8 -e "source /wedatasphere/install/visualis-server/db/ddl.sql"
+mysql --default-character-set=utf8 --socket=/var/lib/mysql/mysql.sock -uvisualis -pvisualis -Dvisualis  --default-character-set=utf8 -e "source /wedatasphere/install/visualis-server/logs/davinci.sql"
+mysql --default-character-set=utf8 --socket=/var/lib/mysql/mysql.sock -uvisualis -pvisualis -Dvisualis  --default-character-set=utf8 -e "source /wedatasphere/install/visualis-server/logs/ddl.sql"
 
 mysql -uroot -proot -e "create user 'qualitis'@'%' identified by 'qualitis';"
 mysql -uroot -proot -e "CREATE DATABASE qualitis DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"

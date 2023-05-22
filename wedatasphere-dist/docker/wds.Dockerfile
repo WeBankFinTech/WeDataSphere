@@ -197,7 +197,7 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && unzip -d ${DSS_WEB_ROOT}/dss/streamis -o /wedatasphere/tmp/streamis/streamis-${STREAMIS_VERSION}-dist.zip \
     && tar -zxf  /wedatasphere/install/exchangis/packages/exchangis-server_${EXCHANGIS_VERSION}.tar.gz -C /wedatasphere/install/exchangis \
     && mkdir -p /wedatasphere/install/exchangis/engine/datax \
-    && unzip -d /wedatasphere/install/exchangis/engine/datax -o datax_engine.zip \
+    && unzip -d /wedatasphere/install/exchangis/engine/datax -o /wedatasphere/tmp/exchangis/datax_engine.zip \
     && cp /wedatasphere/tmp/linkis/hadoop-mapreduce-client-common-2.6.0-cdh5.16.1.jar /wedatasphere/install/exchangis/engine/datax/plugin/reader/hdfsreader/libs/ \
     && cp /wedatasphere/tmp/linkis/hadoop-mapreduce-client-common-2.6.0-cdh5.16.1.jar /wedatasphere/install/exchangis/engine/datax/plugin/writer/hdfswriter/libs/ \
     #&& unzip -d ${DSS_WEB_ROOT}/dss/exchangis/web -o /wedatasphere/tmp/exchangis/dist.zip \
@@ -308,15 +308,7 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && cp  /wedatasphere/install/qualitis-0.9.2/lib/mysql-connector-java-5.1.49.jar /wedatasphere/install/visualis-server/lib/ \
     && cp  /wedatasphere/install/qualitis-0.9.2/lib/mysql-connector-java-5.1.49.jar /wedatasphere/install/spark-2.4.3-bin-hadoop2.6/jars/ \
     && cp  /wedatasphere/install/qualitis-0.9.2/lib/mysql-connector-java-5.1.49.jar /wedatasphere/install/sqoop-1.4.6.bin__hadoop-2.0.4-alpha/lib \
-    #&& cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-commons/public-module/ \
-    #&& rm /wedatasphere/install/linkis/lib/linkis-commons/public-module/mysql-connector-java-8.0.28.jar \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/appconn/dist/v1/lib/ \
-    && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/presto/dist/v0.255/lib/ \
-    && rm /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/presto/dist/v0.255/lib/mysql-connector-java-8.0.28.jar \
-    #&& cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/lib/ \
-    #&& rm /wedatasphere/install/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/lib/mysql-connector-java-8.0.28.jar \
-    #&& cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/linkis/lib/linkis-spring-cloud-services/linkis-mg-gateway/ \
-    #&& rm /wedatasphere/install/linkis/lib/linkis-spring-cloud-services/linkis-mg-gateway/mysql-connector-java-8.0.28.jar \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/streamis/streamis-server/lib/ \
     && rm /wedatasphere/install/streamis/streamis-server/lib/mysql-connector-java-5.1.47.jar \
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/streamis/streamis-server/lib/ \

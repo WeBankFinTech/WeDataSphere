@@ -1,0 +1,159 @@
+# ##################################
+# 1. Visualis Service configuration
+# ##################################
+server:
+  protocol: http
+  address: 0.0.0.0  # server ip address
+  port:  9009 # server port
+  url: http://186.137.170.60:8089/dss/visualis # frontend index page full path
+  access:
+    address: 186.137.170.60 # frontend address
+    port: 8089 # frontend port
+
+
+# ##################################
+# 2. eureka configuration
+# ##################################
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://wds:20303/eureka/ # Configuration required
+  instance:
+    metadata-map:
+      test: wedatasphere
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,info
+
+
+# ##################################
+# 3. Spring configuration
+# ##################################
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: visualis-dev
+  datasource: # visualis需要和dss部署在同一个数据库
+    url: jdbc:mysql://wds:3306/visualis?characterEncoding=UTF-8&allowMultiQueries=true # Configuration required
+    username: visualis
+    password: visualis
+    driver-class-name: com.mysql.jdbc.Driver
+    initial-size: 2
+    min-idle: 1
+    max-wait: 60000
+    max-active: 10
+    type: com.alibaba.druid.pool.DruidDataSource
+    time-between-eviction-runs-millis: 30000
+    min-evictable-idle-time-millis: 300000
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    filters: stat
+    break-after-acquire-failure: true
+    connection-error-retry-attempts: 3
+    validation-query: SELECT 1
+  servlet:
+    multipart:
+      max-request-size: 1024MB
+      max-file-size: 1024MB
+      enabled: true
+      location: /
+
+  config:
+    location: classpath:/
+    additional-location: file:${DAVINCI3_HOME}/conf/
+    name: application
+
+  resources:
+    static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, file:${file.userfiles-path}, file:${file.web_resources}
+
+  mvc:
+    static-path-pattern: /**
+
+  thymeleaf:
+    mode: HTML5
+    cache: true
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    suffix: .html
+    check-template-location: true
+    template-resolver-order: 1
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  cache:
+    caffeine:
+      type: caffeine
+  mail:
+    host: 127.0.0.1
+    port: 25
+    username: visualis
+    password: visualis
+    nickname: visualis
+
+    properties:
+      smtp:
+        starttls:
+          enable: true
+          required: true
+        auth: true
+      mail:
+        smtp:
+          ssl:
+            enable: false
+logging:
+  config: classpath:log4j2.xml
+
+
+# ##################################
+# 4. static resource configuration
+# ##################################
+file:
+  userfiles-path: ${DAVINCI3_HOME}/userfiles
+  web_resources: ${DAVINCI3_HOME}/davinci-ui/
+  base-path: ${DAVINCI3_HOME}
+
+sql_template_delimiter: $
+custom-datasource-driver-path: ${DAVINCI3_HOME}/conf/datasource_driver.yml
+
+
+# ##################################
+# 5. SQL configuration
+# ##################################
+pagehelper:
+  supportMethodsArguments: true
+  reasonable: true
+  returnPageInfo: check
+  helperDialect: mysql
+  params: count=countSql
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+  config-locations: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: edp.davinci.model
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+
+mapper:
+  identity: MYSQL
+  not-empty: false
+  mappers: edp.davinci.dao
+
+
+# ##################################
+# 6. Screenshot drive
+# ##################################
+email:
+  suffix: ""
+screenshot:
+  default_browser: PHANTOMJS
+  timeout_second: 1800
+  phantomjs_path: ${DAVINCI3_HOME}/bin/phantomjs
+  chromedriver_path: $your_chromedriver_path$
+
