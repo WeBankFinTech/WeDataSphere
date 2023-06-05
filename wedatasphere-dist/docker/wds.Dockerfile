@@ -87,12 +87,13 @@ ENV SPARK_CONF_DIR /wedatasphere/install/spark-2.4.3-bin-hadoop2.6/conf
 ENV HIVE_HOME /opt/cloudera/parcels/CDH/lib/hive
 ENV HIVE_CONF_DIR /etc/hive/conf
 ENV hadoopVersion 2.6.0-cdh5.16.1
-ENV YARN_RESTFUL_URL http://cdhdev02.xxxx.com.cn:8088
+ENV YARN_RESTFUL_URL http://cdhdev02.gzcb.com.cn:8088
 ENV HADOOP_HOME /opt/cloudera/parcels/CDH/lib/hadoop
 ENV HADOOP_CONF_DIR /etc/hadoop/conf
 ENV SQOOP_HOME /wedatasphere/install/sqoop-1.4.6.bin__hadoop-2.0.4-alpha
 ENV SQOOP_CONF_DIR /wedatasphere/install/sqoop-1.4.6.bin__hadoop-2.0.4-alpha/conf
 ENV FLINK_HOME /wedatasphere/install/flink-1.12.2
+ENV VISUALIS_HOME /wedatasphere/install/visualis-server
 ENV FLINK_CONF_DIR ${FLINK_HOME}/conf
 ENV FLINK_LIB_DIR ${FLINK_HOME}/lib
 ENV PYTHON_HOME /usr
@@ -113,9 +114,11 @@ ENV MYSQL_PASSWORD linkis
 ENV PATH ${SQOOP_HOME}/bin:${JAVA_HOME}/bin:$PATH:${CDH_HOME}/bin:${SPARK_HOME}/bin:${SPARK_HOME}/sbin:${FLINK_HOME}/bin:${MYSQL_HOME}/bin
 
 ADD target/wds-tars/spark-${SPARK_VERSION}-bin-hadoop${SPARK_HADOOP_VERSION}.tgz /wedatasphere/install
+COPY spark-config/spark-defaults.conf ${SPARK_HOME}/conf/spark-defaults.conf
 ADD target/wds-tars/flink-${FLINK_VERSION}-bin-scala_2.11.tgz /wedatasphere/install
 ADD target/wds-tars/lib.tar.gz /wedatasphere/install/flink-${FLINK_VERSION}
 ADD target/wds-tars/sqoop-${SQOOP_VERSION}.bin__hadoop-2.0.4-alpha.tar.gz /wedatasphere/install
+COPY sqoop-config/sqoop-env.sh ${SQOOP_HOME}/conf/sqoop-env.sh
 ADD target/wds-tars/jdk1.8.0_181-cloudera.tar.gz /
 #ADD target/wds-tars/cdh.tar.gz /opt
 ADD target/wds-tars/mysql-5.7.36-el7-x86_64.tar.gz /wedatasphere/install
@@ -148,6 +151,7 @@ COPY target/wds-tars/openlookeng.zip /wedatasphere/tmp/linkis
 COPY target/wds-tars/pipeline.zip /wedatasphere/tmp/linkis
 COPY target/wds-tars/seatunnel.zip /wedatasphere/tmp/linkis
 COPY target/wds-tars/datax.zip /wedatasphere/tmp/linkis
+COPY target/wds-tars/dss_appconn_instance.sql ${LINKIS_HOME}
 COPY mysql-config/my.cnf /etc/my.cnf
 COPY sbin/*.sh /wedatasphere/sbin/
 COPY scripts/*.sh /wedatasphere/scripts/
@@ -219,7 +223,7 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && sed -i 's/return 1/return 0/g' ${LINKIS_HOME}/sbin/common.sh \
     && sed -i 's/hive-2.3.3/hive-1.1.0_cdh5.16.1/g' ${LINKIS_HOME}/bin/linkis-cli-hive \
     && sed -i 's/hive-2.3.3/hive-1.1.0_cdh5.16.1/g' ${LINKIS_HOME}/db/linkis_dml.sql \
-    && sed -i 's#@YARN_RESTFUL_URL#http://cdhdev02.xxxx.com.cn:8088#g' ${LINKIS_HOME}/db/linkis_dml.sql \
+    && sed -i 's#@YARN_RESTFUL_URL#http://cdhdev02.gzcb.com.cn:8088#g' ${LINKIS_HOME}/db/linkis_dml.sql \
     && sed -i 's#@HADOOP_VERSION#2.6.0-cdh5.16.1#g' ${LINKIS_HOME}/db/linkis_dml.sql \
     && sed -i 's/presto-0.234/presto-0.255/g' ${LINKIS_HOME}/db/linkis_dml.sql \
     && sed -i 's#/appcom/Install/dss/dss-appconns/workflow#/wedatasphere/install/dss/dss-appconns/workflow#g' ${DSS_HOME}/db/dss_dml.sql \
@@ -261,7 +265,7 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && sed -i "s#\[your_mysql_ip\]:\[your_mysql_port\]/\[your_db_name\]#wds:3306/qualitis#g" /wedatasphere/install/qualitis-0.9.2/conf/application-dev.yml \
     && sed -i "s#\[your_name\]#qualitis#g" /wedatasphere/install/qualitis-0.9.2/conf/application-dev.yml \
     && sed -i "s#\[your_pwd\]#qualitis#g" /wedatasphere/install/qualitis-0.9.2/conf/application-dev.yml \
-    && sed -i "s#127.0.0.1#186.137.170.60#g" /wedatasphere/install/qualitis-0.9.2/conf/application-dev.yml \
+    #&& sed -i "s#127.0.0.1#186.137.170.60#g" /wedatasphere/install/qualitis-0.9.2/conf/application-dev.yml \
     && sed -i "s#/appcom/logs/qualitis/logs/qualitis/#/wedatasphere/logs/qualitis/#g" /wedatasphere/install/qualitis-0.9.2/conf/log4j2-dev.xml \
     && sed -i "s#/appcom/logs/qualitis/#/wedatasphere/logs/qualitis/#g" /wedatasphere/install/qualitis-0.9.2/conf/log4j2-dev.xml \
     && sed -i "s#{IP}:{PORT}#wds:20303#g" /wedatasphere/install/exchangis/config/application-exchangis.yml \
@@ -321,8 +325,14 @@ RUN mv /wedatasphere/tmp/dss/dss-${DSS_VERSION}/* ${DSS_HOME}/ \
     && rm /wedatasphere/install/schedulis/schedulis_0.7.1_exec/plugins/jobtypes/datachecker/extlib/mysql-connector-java-8.0.18.jar \    
     && cp /wedatasphere/install/dss/lib/dss-commons/mysql-connector-java-5.1.49.jar /wedatasphere/install/schedulis/schedulis_0.7.1_exec/lib/ \
     && rm /wedatasphere/install/schedulis/schedulis_0.7.1_exec/lib/mysql-connector-java-8.0.18.jar
+COPY linkis-config ${LINKIS_HOME}/conf
+COPY dss-config ${DSS_HOME}/conf
+COPY nginx-config /etc/nginx/conf.d
+COPY visualis-config ${VISUALIS_HOME}/conf
 USER ${LINKIS_SYSTEM_USER}
+COPY system-config/.bash_profile /home/hadoop/.bash_profile
 RUN  ssh-keygen -t rsa -f /home/${LINKIS_SYSTEM_USER}/.ssh/id_rsa \
      && cp /home/${LINKIS_SYSTEM_USER}/.ssh/id_rsa.pub /home/${LINKIS_SYSTEM_USER}/.ssh/authorized_keys \
      && chmod +x /wedatasphere/sbin/*.sh
-ENTRYPOINT ["sh","/wedatasphere/sbin/start-all.sh"]
+#ENTRYPOINT ["sh","/wedatasphere/sbin/start-all.sh"]
+ENTRYPOINT ["/bin/bash"]
