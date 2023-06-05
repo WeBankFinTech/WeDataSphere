@@ -81,7 +81,16 @@ docker images
 
 3. 将镜像运行在容器中 （请确保没有相同名称的container在运行）
 ```shell
-docker run -itd --name='wds' --privileged -p 8085:8085 -p 8087:8087 -p 8083:8083 -p 9500:9500 -p 9400:9400 -p 8090:8090 -p 8080:8080 -p 50070:50070 -p 8088:8088 -p 9001:9001 wedatasphere init
+docker run --name='wds' --privileged=true -p 20921:20921 -p 1004:1004 -p 4040-4050:4040-4050 -p 3306:3306 -p 6121-6140:6121-6140 -p 8080:8080 -p 8020:8020 -p 8022:8022 -p 8032:8032 -p 8088:8088 -p 8089:8089 -p 8090:8090 -p 8098:8098 -p 9088:9088 -p 20303:20303 -p 10000-10009:10000-10009 -p 20000-20009:20000-20009 -p 30000-30009:30000-30009 -p 50020:50020 -v=/opt/cloudera:/opt/cloudera -v=/etc/hive/conf/hive-site.xml:/wedatasphere/install/spark-2.4.3-bin-hadoop2.6/conf/hive-site.xml -v=/etc/hadoop:/etc/hadoop -v=/etc/hive/conf:/etc/hive/conf -v=/etc/krb5.conf:/etc/krb5.conf -v=/home/hadoop/hadoop.keytab:/wedatasphere/auth/hadoop.keytab -v=/home/hadoop/github/utopianet/WeDataSphere/wedatasphere-dist/docker/mysql-data:/wedatasphere/install/mysql-5.7.36-el7-x86_64/data --add-host='dssdev01.gzcb.com.cn:186.137.170.125' --add-host='dssdev02.gzcb.com.cn:186.137.170.129' --add-host='cdhdev01.gzcb.com.cn:186.137.170.23' --add-host='cdhdev02.gzcb.com.cn:186.137.170.24' --add-host='cdhdev03.gzcb.com.cn:186.137.170.25' --add-host='cdhdevvirtual.gzcb.com.cn:186.137.170.107' --add-host='kylindev01.gzcb.com.cn:186.137.170.59' --add-host='kylindev02.gzcb.com.cn:186.137.170.60' -h wds -it wds:0.0.1
+
+参数说明
+/opt/cloudera该目录为CDH客户端目录。
+/etc/hive/conf/hive-site.xml该文件是CDH Hive配置文件。
+/etc/hive/conf/该目录是CDH Hive配置文件目录。
+/etc/krb5.conf该文件为kerberos认证配置文件，如未启用kerberos认证，可以删除。
+/home/hadoop/hadoop.keytab该文件为hadoop用户的kerberos认证的票据凭证，如未启用kerberos认证，可以删除。
+/home/hadoop/github/utopianet/WeDataSphere/wedatasphere-dist/docker/mysql-data该目录为mysql数据库的数据文件，存储了linkis、dss等数据库的数据文件，可以从网盘下载。
+add-host 该参数控制容器中hosts文件的内容，需要将CDH集群中的所有节点的机器名以及对应的IP依次添加。
 ```
 
 4. 进入容器
@@ -89,23 +98,17 @@ docker run -itd --name='wds' --privileged -p 8085:8085 -p 8087:8087 -p 8083:8083
 docker exec -it wds /bin/bash
 ```
 
-5. 在容器中切换到hadoop用户和切换目录到/data/docker下
+5. 在容器中执行启动命令，并且输入宿主机IP
 ```shell
-su hadoop
-cd /data/docker
+sh /wedatasphere/sbin/start-all.sh
 ```
 
-6. 执行脚本docker_start_all.sh，无报错的情况下就可以去登录DSS并使用
+6. 无报错的情况下就可以去登录DSS并使用
+7. 在页面登录的ip为所在服务器的ip，端口为8089，用户名和密码均为hadoop/hadoop
+
+8. 停止服务可执行stop_all.sh脚本
 ```shell
-sh docker_start_all.sh
+sh /wedatasphere/sbin/stop-all.sh
+如发现不能完全停止，可以使用以下命令：
+for pid in $(jps -v); do kill -9 $pid; done
 ```
-
-7. 在页面登录的ip为所在服务器的ip，端口为8085，用户名和密码均为hadoop/hadoop
-
-8. 停止服务可执行docker_stop_all.sh脚本
-```shell
-sh docker_stop_all.sh
-```
-
-
-
