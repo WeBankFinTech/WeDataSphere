@@ -31,7 +31,7 @@ docker run hello-world
 3. 安装CDH5.16.1客户端组件
 
    #1.将集群的hosts文件同步至新增客户端节点与其它节点
-   #2.在新增客户端节点安装Kerberos客户端
+   #2.在新增客户端节点安装Kerberos客户端(可选)
 
    安装pam_krb5、sssd-krb5-common、sssd-krb5、krb5-workstation、krb5-libs等客户端包。
 
@@ -39,11 +39,11 @@ docker run hello-world
 
    使用kinit命令测试Kerberos客户端能否成功使用。
 
-   #3.将集群任意节点的/opt/cloudera/parcels目录压缩并拷贝到新增客户端节点
+   #3.将集群任意节点的/data/opt/cloudera/parcels目录压缩并拷贝到新增客户端节点
 
-   tar -zcvf cdh.tar.gz /opt/cloudera/parcels
+   tar -zcvf cdh.tar.gz /data/opt/cloudera/parcels
 
-   解压到新增客户端的/opt/cloudera/parcels目录
+   解压到新增客户端的/data/opt/cloudera/parcels目录
 
    tar -xvf cdh.tar.gz
 
@@ -63,7 +63,15 @@ docker run hello-world
 
 5. 上传镜像包到服务器
 
-**镜像包较大，请在空闲时间下载**
+6. 编译镜像（可选）
+
+   编译基础环境镜像：
+
+   sudo docker build -f /data/package/WeDataSphere/wedatasphere-dist/base/base.Dockerfile -t base:0.0.1 /data/package/WeDataSphere/wedatasphere-dist/base
+
+   编译应用镜像，需要提前下载好依赖的文件：
+
+   sudo docker build -f /data/package/WeDataSphere/wedatasphere-dist/wds.Dockerfile -t wds:0.0.1 /data/package/WeDataSphere/wedatasphere-dist
 
 ### 二、部署步骤
 1. 查看是否存在名称为wedatasphere的镜像，存在的话建议修改已有镜像的名称
@@ -81,15 +89,16 @@ docker images
 
 3. 将镜像运行在容器中 （请确保没有相同名称的container在运行）
 ```shell
-docker run --name='wds' --privileged=true -p 20921:20921 -p 1004:1004 -p 4040-4050:4040-4050 -p 3306:3306 -p 6121-6140:6121-6140 -p 8080:8080 -p 8020:8020 -p 8022:8022 -p 8032:8032 -p 8088:8088 -p 8089:8089 -p 8090:8090 -p 8098:8098 -p 9088:9088 -p 20303:20303 -p 10000-10009:10000-10009 -p 20000-20009:20000-20009 -p 30000-30009:30000-30009 -p 50020:50020 -v=/opt/cloudera:/opt/cloudera -v=/etc/hive/conf/hive-site.xml:/wedatasphere/install/spark-2.4.3-bin-hadoop2.6/conf/hive-site.xml -v=/etc/hadoop:/etc/hadoop -v=/etc/hive/conf:/etc/hive/conf -v=/etc/krb5.conf:/etc/krb5.conf -v=/home/hadoop/hadoop.keytab:/wedatasphere/auth/hadoop.keytab -v=/home/hadoop/github/utopianet/WeDataSphere/wedatasphere-dist/docker/mysql-data:/wedatasphere/install/mysql-5.7.36-el7-x86_64/data --add-host='dssdev01.gzcb.com.cn:186.137.170.125' --add-host='dssdev02.gzcb.com.cn:186.137.170.129' --add-host='cdhdev01.gzcb.com.cn:186.137.170.23' --add-host='cdhdev02.gzcb.com.cn:186.137.170.24' --add-host='cdhdev03.gzcb.com.cn:186.137.170.25' --add-host='cdhdevvirtual.gzcb.com.cn:186.137.170.107' --add-host='kylindev01.gzcb.com.cn:186.137.170.59' --add-host='kylindev02.gzcb.com.cn:186.137.170.60' -h wds -it wds:0.0.1
+sudo docker run --name wds --privileged=true -p 20921:20921 -p 1004:1004 -p 4040-4050:4040-4050 -p 3306:3306 -p 6121-6140:6121-6140 -p 8080:8080 -p 8020:8020 -p 8022:8022 -p 8032:8032 -p 8088:8088 -p 8085:8085 -p 8090:8090 -p 8098:8098 -p 9088:9088 -p 20303:20303 -p 10000-10009:10000-10009 -p 20000-20009:20000-20009 -p 30000-30009:30000-30009 -p 50020:50020 -v=/data/opt/cloudera:/data/opt/cloudera -v=/etc/hive/conf/hive-site.xml:/wedatasphere/install/spark-2.4.3-bin-hadoop2.6/conf/hive-site.xml -v=/etc/hadoop:/etc/hadoop -v=/etc/hive/conf:/etc/hive/conf -v=/home/hadoop/github/utopianet/WeDataSphere/wedatasphere-dist/mysql-data:/wedatasphere/install/mysql-5.7.36-el7-x86_64/data --add-host='wds07:172.16.16.16' --add-host='wds10:172.16.16.13' --add-host='wds12:172.16.16.12' -h wds -it wds:0.0.1
 
 参数说明
-/opt/cloudera该目录为CDH客户端目录。
+/data/opt/cloudera该目录为CDH客户端目录。
 /etc/hive/conf/hive-site.xml该文件是CDH Hive配置文件。
 /etc/hive/conf/该目录是CDH Hive配置文件目录。
-/etc/krb5.conf该文件为kerberos认证配置文件，如未启用kerberos认证，可以删除。
-/home/hadoop/hadoop.keytab该文件为hadoop用户的kerberos认证的票据凭证，如未启用kerberos认证，可以删除。
-/home/hadoop/github/utopianet/WeDataSphere/wedatasphere-dist/docker/mysql-data该目录为mysql数据库的数据文件，存储了linkis、dss等数据库的数据文件，可以从网盘下载。
+/etc/krb5.conf该文件为kerberos认证配置文件。(可选)
+/home/hadoop/hadoop.keytab该文件为hadoop用户的kerberos认证的票据凭证。(可选)
+/etc/hadoop 该目录是CDH hadoop配置文件目录。
+/home/hadoop/github/utopianet/WeDataSphere/wedatasphere-dist/mysql-data该目录为mysql数据库的数据文件，存储了linkis、dss等数据库的数据文件，可以从网盘下载。
 add-host 该参数控制容器中hosts文件的内容，需要将CDH集群中的所有节点的机器名以及对应的IP依次添加。
 ```
 
