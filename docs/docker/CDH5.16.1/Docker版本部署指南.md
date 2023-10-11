@@ -59,7 +59,7 @@ docker run hello-world
 
    sudo scp -r /etc/hive/* xxxx:/etc/hive
 
-4. 下载WeDataSphere容器化镜像包[点我下载](https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeDatasphere/DataSphereStudio/wedatasphere.tar.gz)
+4. 下载WeDataSphere容器化镜像包[点我下载](https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeDatasphere/DataSphereStudio/CDH5/wds.tar.gz)
 
 5. 上传镜像包到服务器
 
@@ -69,8 +69,9 @@ docker run hello-world
 
    sudo docker build -f /data/package/WeDataSphere/wedatasphere-dist/base/base.Dockerfile -t base:0.0.1 /data/package/WeDataSphere/wedatasphere-dist/base
 
-   编译应用镜像，需要提前下载好依赖的文件：
-
+   编译应用镜像，需要提前下载好依赖的文件，[点我下载](https://share.weiyun.com/LHEppWXF
+   )：
+   
    sudo docker build -f /data/package/WeDataSphere/wedatasphere-dist/wds.Dockerfile -t wds:0.0.1 /data/package/WeDataSphere/wedatasphere-dist
 
 ### 二、部署步骤
@@ -112,10 +113,21 @@ docker exec -it wds /bin/bash
 sh /wedatasphere/sbin/start-all.sh
 ```
 
-6. 无报错的情况下就可以去登录DSS并使用
-7. 在页面登录的ip为所在服务器的ip，端口为8089，用户名和密码均为hadoop/hadoop
+6. 等待启动完毕以后，使用mysql客户端执行以下语句进行数据清理后方可正常使用：
 
-8. 停止服务可执行stop_all.sh脚本
+   delete from linkis_cg_engine_conn_plugin_bml_resources;
+
+   delete from linkis_cg_rm_external_resource_provider;
+   insert  into `linkis_cg_rm_external_resource_provider`(`id`,`resource_type`,`name`,`labels`,`config`) values
+   (1,'Yarn','default',NULL,'{"rmWebAddress":"http://wds10:8088","hadoopVersion":"2.6.0-cdh5.16.1","authorEnable":@YARN_AUTH_ENABLE,"user":"@YARN_AUTH_USER","pwd":"@YARN_AUTH_PWD","kerberosEnable":@YARN_KERBEROS_ENABLE,"principalName":"@YARN_PRINCIPAL_NAME","keytabPath":"@YARN_KEYTAB_PATH","krb5Path":"@YARN_KRB5_PATH"}');
+
+   注意：以上yarn地址需要根据实际环境进行修改。
+
+7. 无报错的情况下就可以去登录DSS并使用
+
+8. 在页面登录的ip为所在服务器的ip，端口为8089，用户名和密码均为hadoop/hadoop
+
+9. 停止服务可执行stop_all.sh脚本
 ```shell
 sh /wedatasphere/sbin/stop-all.sh
 如发现不能完全停止，可以使用以下命令：
