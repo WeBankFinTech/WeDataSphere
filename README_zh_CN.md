@@ -72,4 +72,5 @@ WeDataSphere是一套一站式、金融级、全连通、开源开放的大数�
 ## WeDataSphere Community
 
 如果您想得到最快的响应，请给我们提issue，或者您也可以扫码进群：
+
 ![weChatAndQQ](https://github.com/WeBankFinTech/WeDataSphere/assets/11496700/853e2b68-109f-42ba-a1b7-5e42d01b2865)
